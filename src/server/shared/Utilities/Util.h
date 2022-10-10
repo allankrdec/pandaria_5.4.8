@@ -87,7 +87,7 @@ uint32 urand(uint32 min, uint32 max);
 int32 rand32();
 
 /* Return a random time in the range min..max (up to millisecond precision). */
-Milliseconds randtime(Milliseconds const& min, Milliseconds const& max);
+Milliseconds randtime(long min, long max);
 
 /* Return a random number in the range min..max */
 float frand(float min, float max);

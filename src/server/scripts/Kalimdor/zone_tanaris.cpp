@@ -654,7 +654,7 @@ public:
         {
             playerQuester = owner;
             me->SetReactState(REACT_PASSIVE);
-            events.ScheduleEvent(EVENT_START_WAYPOINT, 100ms);
+            events.ScheduleEvent(EVENT_START_WAYPOINT, 100);
         }
 
         void DoAction(int32 action) override
@@ -713,7 +713,7 @@ struct npc_balloon_throwing_station : public ScriptedAI
 
     void IsSummonedBy(Unit* owner)
     {
-        events.ScheduleEvent(EVENT_RIDE_INVOKER, 1s + 500ms);
+        events.ScheduleEvent(EVENT_RIDE_INVOKER, 1*1000 + 500);
         me->SetReactState(REACT_PASSIVE);
     }
 

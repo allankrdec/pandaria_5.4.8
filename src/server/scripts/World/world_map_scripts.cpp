@@ -53,7 +53,7 @@ class world_map_gilneas: public WorldMapScript
         {
             map->SetZoneWeather(ZONE_ID_GILNEAS, WEATHER_STATE_RAIN_DRIZZLE, 0.3f);
             map->SetZoneWeather(ZONE_ID_GILNEAS_CITY, WEATHER_STATE_FINE, 1.0f);
-            _events.ScheduleEvent(EVENT_CAST_CATACLYSM, 1ms);
+            _events.ScheduleEvent(EVENT_CAST_CATACLYSM, 1000);
         }
 
         void OnUpdate(Map* map, uint32 diff) override
@@ -81,7 +81,8 @@ class world_map_gilneas: public WorldMapScript
                             }
                         }
 
-                        _events.RepeatEvent(randtime(1min, 2min));
+                        //_events.RepeatEvent(randtime(60ms, 120ms));
+			_events.RepeatEvent(60000);
                         break;
                     }
                     default:

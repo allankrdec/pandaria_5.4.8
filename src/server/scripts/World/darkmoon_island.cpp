@@ -1,20 +1,3 @@
-/*
-* This file is part of the Pandaria 5.4.8 Project. See THANKS file for Copyright information
-*
-* This program is free software; you can redistribute it and/or modify it
-* under the terms of the GNU General Public License as published by the
-* Free Software Foundation; either version 2 of the License, or (at your
-* option) any later version.
-*
-* This program is distributed in the hope that it will be useful, but WITHOUT
-* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-* FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-* more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
-
 #include "ScriptMgr.h"
 #include "GameEventMgr.h"
 #include "Transport.h"
@@ -140,11 +123,11 @@ struct npc_darkmoon_moonfang : public customCreatureAI
 
     void EnterCombat(Unit* who) override
     {
-        events.ScheduleEvent(EVENT_MOONFANG_CURSE, 19s + 500ms);
-        events.ScheduleEvent(EVENT_FANGS_OF_THE_MOON, 8s + 500ms);
-        events.ScheduleEvent(EVENT_MOONFANG_TEARS, 11s);
-        events.ScheduleEvent(EVENT_CALL_THE_PACK, 25s);
-        events.ScheduleEvent(EVENT_LEAP_FOR_THE_KILL, 15s);
+        events.ScheduleEvent(EVENT_MOONFANG_CURSE, 19.5 * IN_MILLISECONDS);
+        events.ScheduleEvent(EVENT_FANGS_OF_THE_MOON, 8.5 * IN_MILLISECONDS);
+        events.ScheduleEvent(EVENT_MOONFANG_TEARS, 11 * IN_MILLISECONDS);
+        events.ScheduleEvent(EVENT_CALL_THE_PACK, 25 * IN_MILLISECONDS);
+        events.ScheduleEvent(EVENT_LEAP_FOR_THE_KILL, 15 * IN_MILLISECONDS);
     }
 
     void EnterEvadeMode() override

@@ -141,7 +141,7 @@ struct npc_minigob_manabonk : public ScriptedAI
     {
         playerGuid = ObjectGuid();
         me->SetVisible(false);
-        events.ScheduleEvent(EVENT_SELECT_TARGET, 1s);
+        events.ScheduleEvent(EVENT_SELECT_TARGET, 1*1000);
     }
 
     void GetPlayersInDalaran(std::vector<Player*>& playerList) const
@@ -197,20 +197,20 @@ struct npc_minigob_manabonk : public ScriptedAI
                         player->MovePositionToFirstCollision(pos, dist, angle);
                         me->NearTeleportTo(pos.GetPositionX(), pos.GetPositionY(), pos.GetPositionZ(), pos.GetOrientation());
                     }
-                    events.ScheduleEvent(EVENT_LAUGH_1, 2s);
+                    events.ScheduleEvent(EVENT_LAUGH_1, 2*1000);
                     break;
                 }
                 case EVENT_LAUGH_1:
                     me->HandleEmoteCommand(EMOTE_ONESHOT_LAUGH_NO_SHEATHE);
-                    events.ScheduleEvent(EVENT_WANDER, 3s);
+                    events.ScheduleEvent(EVENT_WANDER, 3*1000);
                     break;
                 case EVENT_WANDER:
                     me->GetMotionMaster()->MoveRandom(8);
-                    events.ScheduleEvent(EVENT_PAUSE, 1min);
+                    events.ScheduleEvent(EVENT_PAUSE, 1*60*1000);
                     break;
                 case EVENT_PAUSE:
                     me->GetMotionMaster()->MoveIdle();
-                    events.ScheduleEvent(EVENT_CAST, 2s);
+                    events.ScheduleEvent(EVENT_CAST, 2*1000);
                     break;
                 case EVENT_CAST:
                     if (Player* player = me->GetMap()->GetPlayer(playerGuid))
@@ -221,15 +221,15 @@ struct npc_minigob_manabonk : public ScriptedAI
                     else
                         me->AddObjectToRemoveList();
 
-                    events.ScheduleEvent(EVENT_LAUGH_2, 8s);
+                    events.ScheduleEvent(EVENT_LAUGH_2, 8*1000);
                     break;
                 case EVENT_LAUGH_2:
                     me->HandleEmoteCommand(EMOTE_ONESHOT_LAUGH_NO_SHEATHE);
-                    events.ScheduleEvent(EVENT_BLINK, 3s);
+                    events.ScheduleEvent(EVENT_BLINK, 3*1000);
                     break;
                 case EVENT_BLINK:
                     DoCastSelf(SPELL_IMPROVED_BLINK);
-                    events.ScheduleEvent(EVENT_DESPAWN, 4s);
+                    events.ScheduleEvent(EVENT_DESPAWN, 4*1000);
                     break;
                 case EVENT_DESPAWN:
                     me->AddObjectToRemoveList();

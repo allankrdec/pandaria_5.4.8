@@ -579,7 +579,7 @@ struct npc_gilneas_city_guard_gate : public ScriptedAI
     void Reset() override
     {
         if (me->GetDistance2d(-1430.47f, 1345.55f) < 10.0f)
-            m_events.ScheduleEvent(EVENT_START_TALK_WITH_CITIZEN, randtime(10s, 30s));
+            m_events.ScheduleEvent(EVENT_START_TALK_WITH_CITIZEN, 20*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -599,7 +599,7 @@ struct npc_gilneas_city_guard_gate : public ScriptedAI
                     if (Creature* npc = ObjectAccessor::GetCreature(*me, m_citizenGUID))
                         npc->HandleEmoteCommand(m_emote);
 
-                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_1, randtime(2s + 200ms, 3s));
+                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_1, 2*1000);
                     break;
                 }
                 case EVENT_TALK_WITH_CITIZEN_1:
@@ -607,13 +607,13 @@ struct npc_gilneas_city_guard_gate : public ScriptedAI
                     if (Creature* npc = ObjectAccessor::GetCreature(*me, m_citizenGUID))
                         npc->AI()->Talk(m_say);
 
-                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_2, 5s);
+                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_2, 5*1000);
                     break;
                 }
                 case EVENT_TALK_WITH_CITIZEN_2:
                 {
                     Talk(m_say);
-                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_3, 5s);
+                    m_events.ScheduleEvent(EVENT_TALK_WITH_CITIZEN_3, 5*1000);
                     break;
                 }
                 case EVENT_TALK_WITH_CITIZEN_3:
@@ -621,7 +621,7 @@ struct npc_gilneas_city_guard_gate : public ScriptedAI
                     if (Creature* npc = ObjectAccessor::GetCreature(*me, m_citizenGUID))
                         npc->HandleEmoteCommand(EMOTE_STATE_NONE);
 
-                    m_events.ScheduleEvent(EVENT_START_TALK_WITH_CITIZEN, randtime(5s, 30s));
+                    m_events.ScheduleEvent(EVENT_START_TALK_WITH_CITIZEN, randtime(5000, 30000));
                     break;
                 }
             }
@@ -666,7 +666,7 @@ struct npc_prince_liam_greymane : public ScriptedAI
 
     void Reset() override
     {
-        _events.RescheduleEvent(EVENT_START_DIALOG, 1s);
+        _events.RescheduleEvent(EVENT_START_DIALOG, 1*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -679,20 +679,20 @@ struct npc_prince_liam_greymane : public ScriptedAI
             {
                 case EVENT_START_DIALOG:
                 {
-                    _events.ScheduleEvent(EVENT_RESET_DIALOG, 2min);
-                    _events.ScheduleEvent(EVENT_START_TALK_TO_GUARD, 1s);
+                    _events.ScheduleEvent(EVENT_RESET_DIALOG, 2*60*1000);
+                    _events.ScheduleEvent(EVENT_START_TALK_TO_GUARD, 1*1000);
                     break;
                 }
                 case EVENT_START_TALK_TO_GUARD:
                 {
                     Talk(PRINCE_LIAM_GREYMANE_TEXT_00);
-                    _events.ScheduleEvent(EVENT_TALK_TO_GUARD_1, 15s);
+                    _events.ScheduleEvent(EVENT_TALK_TO_GUARD_1, 15*1000);
                     break;
                 }
                 case EVENT_TALK_TO_GUARD_1:
                 {
                     Talk(PRINCE_LIAM_GREYMANE_TEXT_01);
-                    _events.ScheduleEvent(EVENT_TALK_TO_GUARD_2, 18s);
+                    _events.ScheduleEvent(EVENT_TALK_TO_GUARD_2, 18*1000);
                     break;
                 }
                 case EVENT_TALK_TO_GUARD_2:
@@ -739,7 +739,7 @@ struct npc_worgen_runt : public ScriptedAI
     {
         me->setActive(true);
         _events.SetPhase(PHASE_ROOF);
-        _events.ScheduleEvent(EVENT_FORCE_DESPAWN, 1min + 10s, 0, PHASE_ROOF);
+        _events.ScheduleEvent(EVENT_FORCE_DESPAWN, 1*60*1000 + 10*1000, 0, PHASE_ROOF);
         _playerGuid = summoner->GetGUID();
 
         if (me->GetEntry() == NPC_WORGEN_RUNT_2)
@@ -838,7 +838,7 @@ struct npc_worgen_runt : public ScriptedAI
         if (type == EFFECT_MOTION_TYPE && pointId == _wayPointCounter && !_jumped)
         {
             _jumped = true;
-            _events.ScheduleEvent(EVENT_JUMP_TO_PRISON, 1s);
+            _events.ScheduleEvent(EVENT_JUMP_TO_PRISON, 1*1000);
         }
     }
 
@@ -859,7 +859,7 @@ struct npc_worgen_runt : public ScriptedAI
                 case EVENT_JUMP_TO_PRISON:
                     me->GetMotionMaster()->MoveJump(worgenRuntJumpPos[_worgenID], 16.0f, _worgenID < WORGEN_ID_CATHEDRAL_1 ? 19.2911f : frand(3.945607f, 4.852813f));
                     me->SetHomePosition(worgenRuntJumpPos[_worgenID]);
-                    _events.ScheduleEvent(EVENT_AGGRO_PLAYER, 2s);
+                    _events.ScheduleEvent(EVENT_AGGRO_PLAYER, 2*1000);
                     break;
                 case EVENT_AGGRO_PLAYER:
                     if (Unit* player = ObjectAccessor::GetPlayer(*me, _playerGuid))
@@ -995,7 +995,7 @@ struct npc_josiah_avery_worgen_form : public PassiveAI
         me->m_Events.AddLambdaEventAtOffset([this, summoner]()
         {
             me->SetFacingToObject(summoner);
-            _events.ScheduleEvent(EVENT_COSMETIC_ATTACK, 500ms);
+            _events.ScheduleEvent(EVENT_COSMETIC_ATTACK, 500);
         }, 200);
     }
 
@@ -1033,12 +1033,12 @@ struct npc_josiah_avery_worgen_form : public PassiveAI
                             if (Creature* labTrigger = lorna->FindNearestCreature(NPC_GENERIC_TRIGGER_LAB, 5.0f, true))
                                 labTrigger->CastSpell(player, SPELL_PULL_TO);
 
-                        _events.ScheduleEvent(EVENT_JUMP_TO_PLAYER, 1s);
+                        _events.ScheduleEvent(EVENT_JUMP_TO_PLAYER, 1*1000);
                     }
                     break;
                 case EVENT_JUMP_TO_PLAYER:
                     me->GetMotionMaster()->MoveJump(josiahJumpPos, 10.0f, 14.18636f);
-                    _events.ScheduleEvent(EVENT_SHOOT_JOSIAH, 1s + 200ms);
+                    _events.ScheduleEvent(EVENT_SHOOT_JOSIAH, 1 * 1000 + 200);
                     break;
                 case EVENT_SHOOT_JOSIAH:
                     if (Creature* lorna = me->FindNearestCreature(NPC_LORNA_CROWLEY, 30.0f, true))
@@ -1341,10 +1341,10 @@ public:
         {
             _scheduler.CancelAll();
 
-            _scheduler.Schedule(randtime(15s, 35s), [this](TaskContext context)
+            _scheduler.Schedule(randtime(15 * IN_MILLISECONDS, 35 * IN_MILLISECONDS), [this](TaskContext context)
             {
                 Talk(0);
-                context.Repeat(randtime(15s, 35s));
+                context.Repeat(randtime(15*1000, 35*1000));
             });
         }
 
@@ -1581,7 +1581,7 @@ class npc_gilneas_children : public CreatureScript
                 me->SetFlag(UNIT_FIELD_NPC_FLAGS, UNIT_NPC_FLAG_SPELLCLICK);
 
                 if (me->GetEntry() == NPC_CYNTHIA)
-                    events.ScheduleEvent(EVENT_CRY, 1s);
+                    events.ScheduleEvent(EVENT_CRY, 1*1000);
             }
 
             void SpellHit(Unit* caster, const SpellInfo* spell)
@@ -1595,7 +1595,7 @@ class npc_gilneas_children : public CreatureScript
                         player->Say(PlayerText[_playerSayId], LANG_UNIVERSAL);
                         player->KilledMonsterCredit(me->GetEntry(), 0);
                         me->RemoveFlag(UNIT_FIELD_NPC_FLAGS, UNIT_NPC_FLAG_SPELLCLICK);
-                        events.ScheduleEvent(EVENT_TALK_TO_PLAYER, 3s + 500ms);
+                        events.ScheduleEvent(EVENT_TALK_TO_PLAYER, 3*1000 + 500);
                     }
                 }
             }
@@ -1615,7 +1615,7 @@ class npc_gilneas_children : public CreatureScript
                             if (Player* player = ObjectAccessor::GetPlayer(*me, playerGUID))
                                 Talk(CHILDREN_TEXT_ID, player);
 
-                            events.ScheduleEvent(EVENT_START_RUN, 5s);
+                            events.ScheduleEvent(EVENT_START_RUN, 5*1000);
                         }
                         break;
                         case EVENT_START_RUN:
@@ -1645,10 +1645,10 @@ class npc_gilneas_children : public CreatureScript
                                 if (door->GetGoState() == GO_STATE_READY)
                                 {
                                     door->UseDoorOrButton();
-                                    events.ScheduleEvent(EVENT_RESUME_RUN, 2s);
+                                    events.ScheduleEvent(EVENT_RESUME_RUN, 2*1000);
                                 }
                                 else
-                                    events.ScheduleEvent(EVENT_RESUME_RUN, 0ms);
+                                    events.ScheduleEvent(EVENT_RESUME_RUN, 0);
                             }
                         }
                         break;
@@ -1658,7 +1658,7 @@ class npc_gilneas_children : public CreatureScript
                             break;
                         case EVENT_CRY:
                             me->HandleEmoteCommand(EMOTE_ONESHOT_CRY);
-                            events.ScheduleEvent(EVENT_CRY, randtime(1s, 1s + 500ms));
+                            events.ScheduleEvent(EVENT_CRY, randtime(1*1000, 1*1000 + 500));
                             break;
                     }
                 }
@@ -1986,8 +1986,8 @@ struct npc_mountain_horse_summoned : public ScriptedAI
         me->GetMotionMaster()->MoveFollow(summoner, 6.0f, 0);
         me->CastSpell(summoner, SPELL_ROPE_CHANNEL, true);
         me->ClearUnitState(UNIT_STATE_CASTING);
-        events.ScheduleEvent(EVENT_CHECK_LORNA, 2s);
-        events.ScheduleEvent(EVENT_CHECK_OWNER, 2s);
+        events.ScheduleEvent(EVENT_CHECK_LORNA, 2*1000);
+        events.ScheduleEvent(EVENT_CHECK_OWNER, 2*1000);
         me->SetWalk(false);
         me->SetSpeed(MOVE_RUN, 2.0f, true);
     }
@@ -2013,7 +2013,7 @@ struct npc_mountain_horse_summoned : public ScriptedAI
                         me->DespawnOrUnsummon(1);
                     }
                     else
-                        events.RescheduleEvent(EVENT_CHECK_LORNA, 2s);
+                        events.RescheduleEvent(EVENT_CHECK_LORNA, 2*1000);
                     break;
                 }
                 case EVENT_CHECK_OWNER:
@@ -2026,7 +2026,7 @@ struct npc_mountain_horse_summoned : public ScriptedAI
                         events.CancelEvent(EVENT_CHECK_OWNER);
                     }
                     else
-                        events.RescheduleEvent(EVENT_CHECK_OWNER, 2s);
+                        events.RescheduleEvent(EVENT_CHECK_OWNER, 2*1000);
                     break;
                 }
                 default:
@@ -2082,7 +2082,7 @@ public:
     {
         npc_stagecoach_carriage_exodusAI(Creature* creature) : ScriptedAI(creature)
         {
-            events.ScheduleEvent(EVENT_BOARD_HARNESS_OWNER, 1ms);
+            events.ScheduleEvent(EVENT_BOARD_HARNESS_OWNER, 1*1000);
             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_NPC | UNIT_FLAG_IMMUNE_TO_PC);
         }
 

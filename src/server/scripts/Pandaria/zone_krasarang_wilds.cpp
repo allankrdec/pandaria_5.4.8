@@ -218,9 +218,9 @@ class npc_arness_the_scale : public CreatureScript
             {
                 events.Reset();
 
-                events.ScheduleEvent(EVENT_GRAPPLING_HOOK, 40s);
-                events.ScheduleEvent(EVENT_VANISH, 20s);
-                events.ScheduleEvent(EVENT_VICIOUS_REND, 15s);
+                events.ScheduleEvent(EVENT_GRAPPLING_HOOK, 40*1000);
+                events.ScheduleEvent(EVENT_VANISH, 20*1000);
+                events.ScheduleEvent(EVENT_VICIOUS_REND, 15*1000);
             }
 
             void JustDied(Unit* /*killer*/) override { }
@@ -242,16 +242,16 @@ class npc_arness_the_scale : public CreatureScript
                         case EVENT_GRAPPLING_HOOK:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_GRAPPLING_HOOK, false);
-                            events.ScheduleEvent(EVENT_GRAPPLING_HOOK, 10s);
+                            events.ScheduleEvent(EVENT_GRAPPLING_HOOK, 10*1000);
                             break;
                         case EVENT_VANISH:
                             me->CastSpell(me, SPELL_VANISH, false);
-                            events.ScheduleEvent(EVENT_VANISH, 20s);
+                            events.ScheduleEvent(EVENT_VANISH, 20*1000);
                             break;
                         case EVENT_VICIOUS_REND:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_VICIOUS_REND, false);
-                            events.ScheduleEvent(EVENT_VICIOUS_REND, 15s);
+                            events.ScheduleEvent(EVENT_VICIOUS_REND, 15*1000);
                             break;
                         default:
                             break;
@@ -303,9 +303,9 @@ class npc_torik_ethis : public CreatureScript
             {
                 events.Reset();
 
-                events.ScheduleEvent(EVENT_BLADE_FURY, 8s);
-                events.ScheduleEvent(EVENT_TORNADO, 40s);
-                events.ScheduleEvent(EVENT_WINDSONG, 32s);
+                events.ScheduleEvent(EVENT_BLADE_FURY, 8*1000);
+                events.ScheduleEvent(EVENT_TORNADO, 40*1000);
+                events.ScheduleEvent(EVENT_WINDSONG, 32*1000);
             }
 
             void JustDied(Unit* /*killer*/) override { }
@@ -337,17 +337,17 @@ class npc_torik_ethis : public CreatureScript
                         case EVENT_BLADE_FURY:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_BLADE_FURY, false);
-                            events.ScheduleEvent(EVENT_BLADE_FURY, 8s);
+                            events.ScheduleEvent(EVENT_BLADE_FURY, 8*1000);
                             break;
                         case EVENT_TORNADO:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_TORNADO, false);
-                            events.ScheduleEvent(EVENT_TORNADO, 40s);
+                            events.ScheduleEvent(EVENT_TORNADO, 40*1000);
                             break;
                         case EVENT_WINDSONG:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_WINDSONG, false);
-                            events.ScheduleEvent(EVENT_WINDSONG, 32s);
+                            events.ScheduleEvent(EVENT_WINDSONG, 32*1000);
                             break;
                         default:
                             break;
@@ -395,9 +395,9 @@ class npc_go_kan : public CreatureScript
             {
                 me->SetStandState(UNIT_STAND_STATE_SIT);
                 events.Reset();
-                events.ScheduleEvent(EVENT_BELLOWING_RAGE, 8s);
-                events.ScheduleEvent(EVENT_RUSHING_CHARGE, 17s);
-                events.ScheduleEvent(EVENT_YAUNGOL_STOMP, 25s);
+                events.ScheduleEvent(EVENT_BELLOWING_RAGE, 8*1000);
+                events.ScheduleEvent(EVENT_RUSHING_CHARGE, 17*1000);
+                events.ScheduleEvent(EVENT_YAUNGOL_STOMP, 25*1000);
             }
 
             void JustDied(Unit* /*killer*/) override { }
@@ -424,17 +424,17 @@ class npc_go_kan : public CreatureScript
                         case EVENT_BELLOWING_RAGE:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_BELLOWING_RAGE, false);
-                            events.ScheduleEvent(EVENT_BELLOWING_RAGE, 50s);
+                            events.ScheduleEvent(EVENT_BELLOWING_RAGE, 50*1000);
                             break;
                         case EVENT_RUSHING_CHARGE:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_RUSHING_CHARGE, false);
-                            events.ScheduleEvent(EVENT_RUSHING_CHARGE, 40s);
+                            events.ScheduleEvent(EVENT_RUSHING_CHARGE, 40*1000);
                             break;
                         case EVENT_YAUNGOL_STOMP:
                             if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO))
                                 me->CastSpell(target, SPELL_YAUNGOL_STOMP, false);
-                            events.ScheduleEvent(EVENT_YAUNGOL_STOMP, 1min + 5s);
+                            events.ScheduleEvent(EVENT_YAUNGOL_STOMP, 1*60*1000 + 5*1000);
                             break;
 
                         default:
@@ -612,7 +612,7 @@ struct krasarang_casterAI : public ScriptedAI
     {
         if (me->HasUnitState(UNIT_STATE_CASTING))
         {
-            events.RescheduleEvent(eventId, randtime(1s, 2s));
+            events.RescheduleEvent(eventId, randtime(1*1000, 2*1000));
             return true;
         }
 
@@ -670,8 +670,8 @@ struct npc_krasari_tormentor : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_ANCIENT_POISON, 3s);
-        events.ScheduleEvent(EVENT_TORMENTORS_SLASH, 8s + 500ms);
+        events.ScheduleEvent(EVENT_ANCIENT_POISON, 3*1000);
+        events.ScheduleEvent(EVENT_TORMENTORS_SLASH, 8*1000 + 500);
     }
 
     void UpdateAI(uint32 diff) override
@@ -700,13 +700,13 @@ struct npc_krasari_tormentor : public ScriptedAI
                             me->RemoveChanneledCast(targetGUID);
                         });
                     }
-                    events.ScheduleEvent(EVENT_TORMENTORS_SLASH, randtime(10s, 19s));
+                    events.ScheduleEvent(EVENT_TORMENTORS_SLASH, randtime(10*1000, 19*1000));
                     break;
                 case EVENT_ANCIENT_POISON:
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_ANCIENT_POISON);
 
-                    events.ScheduleEvent(EVENT_ANCIENT_POISON, randtime(9s, 13s + 500ms));
+                    events.ScheduleEvent(EVENT_ANCIENT_POISON, randtime(9*1000, 13*1000 + 500));
                     break;
             }
         }
@@ -733,9 +733,9 @@ struct npc_krasari_runekeeper : public krasarang_casterAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_ANCIENT_POISON, 3s);
-        events.ScheduleEvent(EVENT_RUNE_OF_SUFFERING, 6s + 500ms);
-        events.ScheduleEvent(EVENT_DARK_MENDING, 13s);
+        events.ScheduleEvent(EVENT_ANCIENT_POISON, 3*1000);
+        events.ScheduleEvent(EVENT_RUNE_OF_SUFFERING, 6*1000 + 500);
+        events.ScheduleEvent(EVENT_DARK_MENDING, 13*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -759,7 +759,7 @@ struct npc_krasari_runekeeper : public krasarang_casterAI
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_ANCIENT_POISON);
 
-                    events.ScheduleEvent(EVENT_ANCIENT_POISON, randtime(9s, 13s + 500ms));
+                    events.ScheduleEvent(EVENT_ANCIENT_POISON, randtime(9*1000, 13*1000 + 500));
                     break;
                 case EVENT_RUNE_OF_SUFFERING:
                     if (HandleRescheduleEventsIfCastAny(eventId))
@@ -768,7 +768,7 @@ struct npc_krasari_runekeeper : public krasarang_casterAI
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_RUNE_OF_SUFFERING);
 
-                    events.ScheduleEvent(EVENT_RUNE_OF_SUFFERING, randtime(15s + 500ms, 25s));
+                    events.ScheduleEvent(EVENT_RUNE_OF_SUFFERING, randtime(15*1000 + 500, 25*1000));
                     break;
                 case EVENT_DARK_MENDING:
                     if (HandleRescheduleEventsIfCastAny(eventId))
@@ -777,7 +777,7 @@ struct npc_krasari_runekeeper : public krasarang_casterAI
                     if (Unit* target = ObjectAccessor::GetUnit(*me, GetLowestFriendlyGUID()))
                         DoCast(target, SPELL_DARK_MENDING);
 
-                    events.ScheduleEvent(EVENT_DARK_MENDING, randtime(13s, 21s));
+                    events.ScheduleEvent(EVENT_DARK_MENDING, randtime(13*1000, 21*1000));
                     break;
             }
         }
@@ -800,7 +800,7 @@ struct npc_weeping_horror : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_OVERWHELMING_SADNESS, randtime(3s + 500ms, 6s));
+        events.ScheduleEvent(EVENT_OVERWHELMING_SADNESS, randtime(3*1000 + 500, 6*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -820,7 +820,7 @@ struct npc_weeping_horror : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_OVERWHELMING_SADNESS);
 
-                events.ScheduleEvent(EVENT_OVERWHELMING_SADNESS, randtime(6s + 500ms, 7s + 500ms));
+                events.ScheduleEvent(EVENT_OVERWHELMING_SADNESS, randtime(6*1000 + 500, 7*1000 + 500));
             }
             break;
         }
@@ -843,7 +843,7 @@ struct npc_bilgewater_sapper : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_THROW_DYNAMITE, randtime(3s + 500ms, 6s));
+        events.ScheduleEvent(EVENT_THROW_DYNAMITE, randtime(3*1000 + 500, 6*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -863,7 +863,7 @@ struct npc_bilgewater_sapper : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_THROW_DYNAMITE);
 
-                events.ScheduleEvent(EVENT_THROW_DYNAMITE, randtime(6s + 500ms, 14s));
+                events.ScheduleEvent(EVENT_THROW_DYNAMITE, randtime(6*1000 + 500*1000, 14*1000));
             }
             break;
         }
@@ -888,8 +888,8 @@ struct npc_viceclaw_scuttler : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_RAGE_OF_ELDERS, 3s);
-        events.ScheduleEvent(EVENT_VICE_CLAW, randtime(5s + 500ms, 12s));
+        events.ScheduleEvent(EVENT_RAGE_OF_ELDERS, 3*1000);
+        events.ScheduleEvent(EVENT_VICE_CLAW, randtime(5*1000 + 500, 12*1000));
     }
 
     void DamageTaken(Unit* attacker, uint32& damage) override
@@ -917,13 +917,13 @@ struct npc_viceclaw_scuttler : public ScriptedAI
             {
                 case EVENT_RAGE_OF_ELDERS:
                     DoCast(me, SPELL_RAGE_OF_ELDERS);
-                    events.ScheduleEvent(EVENT_RAGE_OF_ELDERS, 14s + 500ms);
+                    events.ScheduleEvent(EVENT_RAGE_OF_ELDERS, 14*1000 + 500);
                     break;
                 case EVENT_VICE_CLAW:
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_VICE_CLAW);
 
-                    events.ScheduleEvent(EVENT_VICE_CLAW, randtime(10s + 500ms, 17s));
+                    events.ScheduleEvent(EVENT_VICE_CLAW, randtime(10*1000 + 500, 17*1000));
                     break;
             }
         }
@@ -947,7 +947,7 @@ struct npc_dominance_grunt : public ScriptedAI
     void EnterCombat(Unit* /*who*/) override
     {
         DoCast(me, SPELL_BLOODTHIRSTY);
-        events.ScheduleEvent(EVENT_DECAPITATE, randtime(4s + 500ms, 11s + 500ms));
+        events.ScheduleEvent(EVENT_DECAPITATE, randtime(4*1000 + 500, 11*1000 + 500));
     }
 
     void UpdateAI(uint32 diff) override
@@ -964,7 +964,7 @@ struct npc_dominance_grunt : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_DECAPITATE);
 
-                events.ScheduleEvent(EVENT_DECAPITATE, randtime(4s + 500ms, 11s + 500ms));
+                events.ScheduleEvent(EVENT_DECAPITATE, randtime(4*1000 + 500, 11*1000 + 500));
             }
             break;
         }
@@ -989,7 +989,7 @@ struct npc_elder_seadragon : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_ZIN_SPIN, randtime(8s + 500ms, 11s + 500ms));
+        events.ScheduleEvent(EVENT_ZIN_SPIN, randtime(8*1000 + 500, 11*1000 + 500));
     }
 
     void DamageTaken(Unit* attacker, uint32& damage) override
@@ -1014,7 +1014,7 @@ struct npc_elder_seadragon : public ScriptedAI
             {
                 DoCast(me, SPELL_ZIN_SPIN);
                 me->ClearUnitState(UNIT_STATE_CASTING);
-                events.ScheduleEvent(EVENT_ZIN_SPIN, randtime(13s + 500ms, 18s));
+                events.ScheduleEvent(EVENT_ZIN_SPIN, randtime(13*1000 + 500, 18*1000));
             }
             break;
         }
@@ -1037,9 +1037,9 @@ struct npc_sunwalker_scout : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_CONSECRATION, 3s);
-        events.ScheduleEvent(EVENT_AVENGERS_SHIELD, 12s);
-        events.ScheduleEvent(EVENT_HAMMER_OF_WRATH, randtime(4s + 500ms, 12s));
+        events.ScheduleEvent(EVENT_CONSECRATION, 3*1000);
+        events.ScheduleEvent(EVENT_AVENGERS_SHIELD, 12*1000);
+        events.ScheduleEvent(EVENT_HAMMER_OF_WRATH, randtime(4*1000 + 500, 12*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -1058,19 +1058,19 @@ struct npc_sunwalker_scout : public ScriptedAI
             {
                 case EVENT_CONSECRATION:
                     DoCast(me, SPELL_CONSECRATION);
-                    events.ScheduleEvent(EVENT_CONSECRATION, 11s);
+                    events.ScheduleEvent(EVENT_CONSECRATION, 11*1000);
                     break;
                 case EVENT_AVENGERS_SHIELD:
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_AVENGERS_SHIELD);
 
-                    events.ScheduleEvent(EVENT_AVENGERS_SHIELD, 12s + 500ms);
+                    events.ScheduleEvent(EVENT_AVENGERS_SHIELD, 12*1000 + 500);
                     break;
                 case EVENT_HAMMER_OF_WRATH:
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_HAMMER_OF_WRATH);
 
-                    events.ScheduleEvent(EVENT_HAMMER_OF_WRATH, randtime(4s + 500ms, 12s));
+                    events.ScheduleEvent(EVENT_HAMMER_OF_WRATH, randtime(4*1000 + 500, 12*1000));
                     break;
             }
         }
@@ -1096,7 +1096,7 @@ struct npc_dojani_dominator : public ScriptedAI
     void EnterCombat(Unit* /*who*/) override
     {
         DoCast(me, SPELL_MOGU_RUNE_WARD);
-        events.ScheduleEvent(EVENT_MIGHT_MAKES_RIGHT, randtime(8s + 500ms, 11s + 500ms));
+        events.ScheduleEvent(EVENT_MIGHT_MAKES_RIGHT, randtime(8*1000 + 500, 11*1000 + 500));
     }
 
     void DamageTaken(Unit* attacker, uint32& damage) override
@@ -1122,7 +1122,7 @@ struct npc_dojani_dominator : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_MIGHT_MAKES_RIGHT);
 
-                events.ScheduleEvent(EVENT_MIGHT_MAKES_RIGHT, randtime(13s + 500ms, 18s));
+                events.ScheduleEvent(EVENT_MIGHT_MAKES_RIGHT, randtime(13*1000 + 500, 18*1000));
             }
             break;
         }
@@ -1147,8 +1147,8 @@ struct npc_dojani_enforcer : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_SHOCKWAVE, 4s + 500ms);
-        events.ScheduleEvent(EVENT_LEAP_OF_VICTORY, randtime(8s + 500ms, 18s));
+        events.ScheduleEvent(EVENT_SHOCKWAVE, 4*1000 + 500);
+        events.ScheduleEvent(EVENT_LEAP_OF_VICTORY, randtime(8*1000 + 500, 18*1000));
     }
 
     void DamageTaken(Unit* attacker, uint32& damage) override
@@ -1175,11 +1175,11 @@ struct npc_dojani_enforcer : public ScriptedAI
                     if (Unit* target = SelectTarget(SELECT_TARGET_FARTHEST))
                         DoCast(target, SPELL_LEAP_OF_VICTORY);
 
-                    events.ScheduleEvent(EVENT_LEAP_OF_VICTORY, randtime(8s + 500ms, 18s));
+                    events.ScheduleEvent(EVENT_LEAP_OF_VICTORY, randtime(8*1000 + 500, 18*1000));
                     break;
                 case EVENT_SHOCKWAVE:
                     DoCast(me, SPELL_SHOCKWAVE);
-                    events.ScheduleEvent(EVENT_SHOCKWAVE, 12s);
+                    events.ScheduleEvent(EVENT_SHOCKWAVE, 12*1000);
                     break;
             }
         }
@@ -1202,7 +1202,7 @@ struct npc_dojani_surveyor : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_SUNDEN_ARMOR, randtime(4s + 500ms, 13s));
+        events.ScheduleEvent(EVENT_SUNDEN_ARMOR, randtime(4*1000 + 500, 13*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -1219,7 +1219,7 @@ struct npc_dojani_surveyor : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_SUNDEN_ARMOR);
 
-                events.ScheduleEvent(EVENT_SUNDEN_ARMOR, randtime(8s + 500ms, 19s + 500ms));
+                events.ScheduleEvent(EVENT_SUNDEN_ARMOR, randtime(8*1000 + 500, 19*1000 + 500));
             }
             break;
         }
@@ -1242,8 +1242,8 @@ struct npc_dojani_reclaimer : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_RECLAIM_STRENGTH, 6s + 500ms);
-        events.ScheduleEvent(EVENT_ANCIENT_RUNE_OF_STRIKING, 1s + 500ms);
+        events.ScheduleEvent(EVENT_RECLAIM_STRENGTH, 6*1000 + 500);
+        events.ScheduleEvent(EVENT_ANCIENT_RUNE_OF_STRIKING, 1*1000 + 500);
     }
 
     void UpdateAI(uint32 diff) override
@@ -1261,11 +1261,11 @@ struct npc_dojani_reclaimer : public ScriptedAI
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_RECLAIM_STRENGTH);
 
-                    events.ScheduleEvent(EVENT_RECLAIM_STRENGTH, randtime(13s + 500ms, 23s));
+                    events.ScheduleEvent(EVENT_RECLAIM_STRENGTH, randtime(13*1000 + 500, 23*1000));
                     break;
                 case EVENT_ANCIENT_RUNE_OF_STRIKING:
                     me->CastSpell(me->GetPositionX() + frand(-7.0f, 7.0f), me->GetPositionY() + frand(-10.0f, 10.0f), me->GetPositionZ(), SPELL_ANCIENT_RUNE_OF_STRIKING, true);
-                    events.ScheduleEvent(EVENT_ANCIENT_RUNE_OF_STRIKING, randtime(10s + 500ms, 20s));
+                    events.ScheduleEvent(EVENT_ANCIENT_RUNE_OF_STRIKING, randtime(10*1000 + 500, 20*1000));
                     break;
             }
         }
@@ -1288,7 +1288,7 @@ struct npc_riverblade_slayer : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_SAVAGE_STRIKES, randtime(4s + 500ms, 13s));
+        events.ScheduleEvent(EVENT_SAVAGE_STRIKES, randtime(4*1000 + 500, 13*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -1305,7 +1305,7 @@ struct npc_riverblade_slayer : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_SAVAGE_STRIKES);
 
-                events.ScheduleEvent(EVENT_SAVAGE_STRIKES, randtime(8s + 500ms, 19s + 500ms));
+                events.ScheduleEvent(EVENT_SAVAGE_STRIKES, randtime(8*1000 + 500, 19*1000 + 500));
             }
             break;
         }
@@ -1331,8 +1331,8 @@ struct npc_sha_of_despair : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_CALL_OF_DESPAIR, randtime(8s, 20s));
-        events.ScheduleEvent(EVENT_GLOOM_WHIRL, 13s);
+        events.ScheduleEvent(EVENT_CALL_OF_DESPAIR, randtime(8*1000, 20*1000));
+        events.ScheduleEvent(EVENT_GLOOM_WHIRL, 13*1000);
     }
 
     void JustSummoned(Creature* summon) override
@@ -1364,11 +1364,11 @@ struct npc_sha_of_despair : public ScriptedAI
             {
                 case EVENT_CALL_OF_DESPAIR:
                     DoCast(me, SPELL_CALL_OF_DESPAIR);
-                    events.ScheduleEvent(EVENT_CALL_OF_DESPAIR, randtime(18s, 36s));
+                    events.ScheduleEvent(EVENT_CALL_OF_DESPAIR, randtime(18*1000, 36*1000));
                     break;
                 case EVENT_GLOOM_WHIRL:
                     DoCast(me, SPELL_GLOOM_WHIRL);
-                    events.ScheduleEvent(EVENT_GLOOM_WHIRL, 19s);
+                    events.ScheduleEvent(EVENT_GLOOM_WHIRL, 19*1000);
                     break;
             }
         }
@@ -1392,7 +1392,7 @@ struct npc_echo_of_despair : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_LANGUOR, randtime(4s + 500ms, 17s));
+        events.ScheduleEvent(EVENT_LANGUOR, randtime(4*1000 + 500, 17*1000));
     }
 
     void UpdateAI(uint32 diff) override
@@ -1409,7 +1409,7 @@ struct npc_echo_of_despair : public ScriptedAI
                 if (Unit* target = me->GetVictim())
                     DoCast(target, SPELL_LANGUOR);
 
-                events.ScheduleEvent(EVENT_LANGUOR, randtime(8s + 500ms, 19s + 500ms));
+                events.ScheduleEvent(EVENT_LANGUOR, randtime(8*1000 + 500, 19*1000 + 500));
             }
             break;
         }
@@ -1432,8 +1432,8 @@ struct npc_source_of_despair : public ScriptedAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_LANGUOR, randtime(4s + 500ms, 17s));
-        events.ScheduleEvent(EVENT_WAVE_OF_DESPAIR, 10s);
+        events.ScheduleEvent(EVENT_LANGUOR, randtime(4*1000 + 500, 17*1000));
+        events.ScheduleEvent(EVENT_WAVE_OF_DESPAIR, 10*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -1451,11 +1451,11 @@ struct npc_source_of_despair : public ScriptedAI
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_LANGUOR);
 
-                    events.ScheduleEvent(EVENT_LANGUOR, randtime(8s + 500ms, 19s + 500ms));
+                    events.ScheduleEvent(EVENT_LANGUOR, randtime(8*1000 + 500, 19*1000 + 500));
                     break;
                 case EVENT_WAVE_OF_DESPAIR:
                     DoCast(me, SPELL_WAVE_OF_DESPAIR);
-                    events.ScheduleEvent(EVENT_WAVE_OF_DESPAIR, 10s);
+                    events.ScheduleEvent(EVENT_WAVE_OF_DESPAIR, 10*1000);
                     break;
             }
         }
@@ -1482,9 +1482,9 @@ struct npc_child_of_chi_ji_krasarang : public krasarang_casterAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_HEALING_SONG, 15s);
-        events.ScheduleEvent(EVENT_BEAK_STAB, randtime(8s + 500ms, 14s));
-        events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 4s);
+        events.ScheduleEvent(EVENT_HEALING_SONG, 15*1000);
+        events.ScheduleEvent(EVENT_BEAK_STAB, randtime(8*1000 + 500, 14*1000));
+        events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 4*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -1503,7 +1503,7 @@ struct npc_child_of_chi_ji_krasarang : public krasarang_casterAI
                         break;
 
                     DoCast(me, SPELL_HEALING_SONG_OF_SINGER);
-                    events.ScheduleEvent(EVENT_HEALING_SONG, randtime(15s, 25s));
+                    events.ScheduleEvent(EVENT_HEALING_SONG, randtime(15*1000, 25*1000));
                     break;
                 case EVENT_BEAK_STAB:
                     if (HandleRescheduleEventsIfCastAny(eventId))
@@ -1520,14 +1520,14 @@ struct npc_child_of_chi_ji_krasarang : public krasarang_casterAI
                             me->RemoveChanneledCast(targetGUID);
                         });
                     }
-                    events.ScheduleEvent(EVENT_BEAK_STAB, randtime(14s + 500ms, 19s + 500ms));
+                    events.ScheduleEvent(EVENT_BEAK_STAB, randtime(14*1000 + 500, 19*1000 + 500));
                     break;
                 case EVENT_GIFT_OF_CHI_JI:
                     if (HandleRescheduleEventsIfCastAny(eventId))
                         break;
 
                     DoCast(me, SPELL_GIFT_OF_CHI_JI);
-                    events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 13s + 500ms);
+                    events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 13*1000 + 500);
                     break;
             }
         }
@@ -1550,9 +1550,9 @@ struct npc_student_of_chi_ji : public krasarang_casterAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_BLESSING_OF_CHI_JI, 15s);
-        events.ScheduleEvent(EVENT_WRATH_OF_CHI_JI, randtime(4s + 500ms, 15s));
-        events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 4s);
+        events.ScheduleEvent(EVENT_BLESSING_OF_CHI_JI, 15*1000);
+        events.ScheduleEvent(EVENT_WRATH_OF_CHI_JI, randtime(4*1000 + 500, 15*1000));
+        events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 4*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -1573,7 +1573,7 @@ struct npc_student_of_chi_ji : public krasarang_casterAI
                     if (Unit* target = ObjectAccessor::GetUnit(*me, GetLowestFriendlyGUID()))
                         DoCast(target, SPELL_BLESSING_OF_CHI_JI);
 
-                    events.ScheduleEvent(EVENT_BLESSING_OF_CHI_JI, randtime(15s, 20s));
+                    events.ScheduleEvent(EVENT_BLESSING_OF_CHI_JI, randtime(15*1000, 20*1000));
                     break;
                 case EVENT_WRATH_OF_CHI_JI:
                     if (HandleRescheduleEventsIfCastAny(eventId))
@@ -1582,14 +1582,14 @@ struct npc_student_of_chi_ji : public krasarang_casterAI
                     if (Unit* target = me->GetVictim())
                         DoCast(target, SPELL_WRATH_OF_CHI_JI);
 
-                    events.ScheduleEvent(EVENT_WRATH_OF_CHI_JI, randtime(4s + 500ms, 15s));
+                    events.ScheduleEvent(EVENT_WRATH_OF_CHI_JI, randtime(4*1000 + 500, 15*1000));
                     break;
                 case EVENT_GIFT_OF_CHI_JI:
                     if (HandleRescheduleEventsIfCastAny(eventId))
                         break;
 
                     DoCast(me, SPELL_GIFT_OF_CHI_JI);
-                    events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 13s + 500ms);
+                    events.ScheduleEvent(EVENT_GIFT_OF_CHI_JI, 13*1000 + 500*1000);
                     break;
             }
         }
@@ -1846,10 +1846,8 @@ struct npc_garrosh_hellscream_krasarang_landing : public ScriptedAI
 
     void IsSummonedBy(Unit* summoner) override
     {
-        delay = 0;
-        me->m_Events.Schedule(delay += 2000, [this]()
-        {
-            Talk(TALK_INTRO);
+        delay = 0; me->m_Events.Schedule(delay += 2000, [this]() { 
+	    Talk(TALK_INTRO);
         });
 
         me->m_Events.Schedule(delay += 8000, [this]()
@@ -1879,9 +1877,9 @@ struct npc_high_marshal_twinbraid : public customCreatureAI
     void EnterCombat(Unit* /*who*/) override
     {
         Talk(TALK_SPECIAL_1);
-        events.ScheduleEvent(EVENT_CANNONBALL_SPIN, randtime(8s + 500ms, 19s));
-        events.ScheduleEvent(EVENT_CHAINGUN, 25s);
-        events.ScheduleEvent(EVENT_EXPLOSIVES_PLUNGER, randtime(15s, 20s));
+        events.ScheduleEvent(EVENT_CANNONBALL_SPIN, randtime(8*1000 + 500, 19*1000));
+        events.ScheduleEvent(EVENT_CHAINGUN, 25*1000);
+        events.ScheduleEvent(EVENT_EXPLOSIVES_PLUNGER, randtime(15*1000, 20*1000));
     }
 
     void JustDied(Unit* /*killer*/) override 
@@ -1927,10 +1925,10 @@ struct npc_warlord_bloodhilt : public customCreatureAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_COUP_DE_GRACE, randtime(3s + 500ms, 8s));
-        events.ScheduleEvent(EVENT_BLOODY_KNIVES, 12s);
-        events.ScheduleEvent(EVENT_BLOODTHIRSTY_STRIKE, randtime(19s, 35s));
-        events.ScheduleEvent(EVENT_BRUTAL_CHARGE, 17s);
+        events.ScheduleEvent(EVENT_COUP_DE_GRACE, randtime(3*1000 + 500, 8*1000));
+        events.ScheduleEvent(EVENT_BLOODY_KNIVES, 12*1000);
+        events.ScheduleEvent(EVENT_BLOODTHIRSTY_STRIKE, randtime(19*1000, 35*1000));
+        events.ScheduleEvent(EVENT_BRUTAL_CHARGE, 17*1000);
     }
 
     void JustDied(Unit* /*killer*/) override
@@ -2208,8 +2206,8 @@ struct npc_nahassa : public ScriptedAI
     {
         me->RemoveAurasDueToSpell(SPELL_NAHASSA_INJURED_ANIM);
         me->RemoveAurasDueToSpell(SPELL_DYING);
-        events.ScheduleEvent(EVENT_01, 0ms);
-        events.ScheduleEvent(EVENT_02, 5s);
+        events.ScheduleEvent(EVENT_01, 0);
+        events.ScheduleEvent(EVENT_02, 5*1000);
     }
 
     void UpdateAI(uint32 diff) override
@@ -2225,11 +2223,11 @@ struct npc_nahassa : public ScriptedAI
             {
                 case EVENT_01:
                     DoCastVictim(SPELL_JAW_SNAP);
-                    events.ScheduleEvent(EVENT_01, randtime(10s, 14s));
+                    events.ScheduleEvent(EVENT_01, randtime(10*1000, 14*1000));
                     break;
                 case EVENT_02:
                     DoCastVictim(SPELL_FEVERISH_DEATHBITE);
-                    events.ScheduleEvent(EVENT_02, randtime(13s, 20s));
+                    events.ScheduleEvent(EVENT_02, randtime(13*1000, 20*1000));
                     break;
             }
         }
@@ -2346,7 +2344,7 @@ struct npc_groundbreaker_brojai : public customCreatureAI
 
     void EnterCombat(Unit* /*who*/) override
     {
-        events.ScheduleEvent(EVENT_EARTH_SPIKE, randtime(3s + 500ms, 12s));
+        events.ScheduleEvent(EVENT_EARTH_SPIKE, randtime(3*1000 + 500, 12*1000));
     }
 
     void JustDied(Unit* /*killer*/) override
@@ -2606,8 +2604,8 @@ struct npc_frenzied_reef_shark : public VehicleAI
                         Talk(TEXT_01, passenger);
                 me->GetMotionMaster()->MovePath(me->GetEntry(), true);
             });
-            events.ScheduleEvent(EVENT_DECREASE_POWER, 3s);
-            events.ScheduleEvent(EVENT_CHECK_POWER, 3s);
+            events.ScheduleEvent(EVENT_DECREASE_POWER, 3*1000);
+            events.ScheduleEvent(EVENT_CHECK_POWER, 3*1000);
         }
     }
 
@@ -2635,7 +2633,7 @@ struct npc_frenzied_reef_shark : public VehicleAI
                     if (Player* passenger = me->GetVehicleKit()->GetPassenger(0)->ToPlayer())
                         if (int32 power = passenger->GetPower(POWER_ALTERNATE_POWER))
                             passenger->SetPower(POWER_ALTERNATE_POWER, power - 5);
-                    events.ScheduleEvent(EVENT_DECREASE_POWER, 3s);
+                    events.ScheduleEvent(EVENT_DECREASE_POWER, 3*1000);
                     break;
                 case EVENT_CHECK_POWER:
                     if (Player* passenger = me->GetVehicleKit()->GetPassenger(0)->ToPlayer())
@@ -2648,7 +2646,7 @@ struct npc_frenzied_reef_shark : public VehicleAI
                             return;
                         }
                     }
-                    events.ScheduleEvent(EVENT_CHECK_POWER, 3s);
+                    events.ScheduleEvent(EVENT_CHECK_POWER, 3*1000);
                     break;
             }
         }

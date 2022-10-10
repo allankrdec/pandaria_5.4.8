@@ -48,12 +48,12 @@ int32 rand32()
     return int32(sfmtRand->BRandom());
 }
 
-Milliseconds randtime(Milliseconds const& min, Milliseconds const& max)
+Milliseconds randtime(long min, long max)
 {
-    long long diff = max.count() - min.count();
+    long long diff = max - min;
     ASSERT(diff >= 0);
     ASSERT(diff <= (uint32)-1);
-    return min + Milliseconds(urand(0, diff));
+    return Milliseconds(min + urand(0, diff));
 }
 
 double rand_norm(void)
