@@ -22,7 +22,7 @@ $ sudo apt update
 
 $sudo apt install -f mysql-client=5.7* mysql-server=5.7* libmysqlclient-dev=5.7*
 
-$git clone -b trunk https://github.com/allankrdec/pandaria_5.4.8.git
+$git clone https://github.com/allankrdec/pandaria_5.4.8.git
 
 $cd pandaria_5.4.8
 
