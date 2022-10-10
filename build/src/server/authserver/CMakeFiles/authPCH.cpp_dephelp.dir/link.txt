@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -shared  -o libauthPCH.cpp_dephelp.so CMakeFiles/authPCH.cpp_dephelp.dir/PrecompiledHeaders/authPCH.cpp.o 

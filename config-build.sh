@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cmake ../ -DTOOLS=0 -DSERVERS=1 -DCMAKE_INSTALL_PREFIX=/home/wow/pandaria-548/
+cmake ../ -DCMAKE_CXX_FLAGS="-s" -DSCRIPTS=1 -DTOOLS=0 -DSERVERS=1 -DCMAKE_INSTALL_PREFIX=/home/wow/pandaria-548/
 cp ../src/server/authserver/PrecompiledHeaders/authPCH.h src/server/authserver/
 cp ../src/server/worldserver/PrecompiledHeaders/worldPCH.h src/server/worldserver/
 

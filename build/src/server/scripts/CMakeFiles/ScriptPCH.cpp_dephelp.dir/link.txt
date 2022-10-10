@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -shared  -o libScriptPCH.cpp_dephelp.so CMakeFiles/ScriptPCH.cpp_dephelp.dir/PrecompiledHeaders/ScriptPCH.cpp.o 

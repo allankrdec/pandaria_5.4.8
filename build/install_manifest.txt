@@ -1,0 +1,4 @@
+/home/wow/pandaria-548/bin/worldserver
+/home/wow/pandaria-548/etc/worldserver.conf.dist
+/home/wow/pandaria-548/bin/authserver
+/home/wow/pandaria-548/etc/authserver.conf.dist

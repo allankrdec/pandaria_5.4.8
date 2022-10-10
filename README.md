@@ -8,7 +8,7 @@ Compiled exe files: https://mega.nz/file/0dxU1b4I#axVg6aXsNfgQeKcglV_RLHOPV4gXB_
 Geodata: https://mega.nz/file/EAZUmZiD#PxdHN7jcEKCA8qaIBTIWLWLGZcT5PdsKfIgkygTZgTs
 
 ## Requirements
-+ Platform: Linux, Windows or Mac
++ Platform: Linux(Ubuntu 20.04), Windows or Mac
 + Processor with SSE2 support
 + ACE = 7.0.0 (included for Windows) 
 + MySQL = 5.7
@@ -19,6 +19,8 @@ Geodata: https://mega.nz/file/EAZUmZiD#PxdHN7jcEKCA8qaIBTIWLWLGZcT5PdsKfIgkygTZg
 + MS Visual Studio (Community) ≥ 16.4 (2019) (Desktop) (Not previews) 
 + GCC = 4.7.2 (Linux only)
 
+## Build Ubuntu 20.04
+Read file [Build](BUILD.md)
 ## Copyright
 License: GPL 2.0
 

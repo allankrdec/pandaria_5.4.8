@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -shared  -o libworldPCH.cpp_dephelp.so CMakeFiles/worldPCH.cpp_dephelp.dir/PrecompiledHeaders/worldPCH.cpp.o 
