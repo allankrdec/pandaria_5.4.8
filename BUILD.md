@@ -1,7 +1,7 @@
 
 ## Install Requirements ##
 **Dependencias**
-$sudo apt-get install build-essential autoconf libtool gcc g++ make cmake subversion git patch wget links zip unzip openssl libssl-dev libreadline-gplv2-dev zlib1g-dev libbz2-dev git-core libace-dev libncurses5-dev libace-dev -y
+$sudo apt-get install build-essential autoconf libtool gcc g++ make cmake subversion git patch wget links zip unzip openssl libssl-dev libreadline-gplv2-dev zlib1g-dev libbz2-dev git-core libace-dev libncurses5-dev libace-dev libboost-all-dev -y
 
 **Mysql 5.7**
 $wget https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb
