@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -shared  -o libsharedPCH.cpp_dephelp.so CMakeFiles/sharedPCH.cpp_dephelp.dir/PrecompiledHeaders/sharedPCH.cpp.o 

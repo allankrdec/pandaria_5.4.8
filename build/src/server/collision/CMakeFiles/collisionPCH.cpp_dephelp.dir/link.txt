@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -shared  -o libcollisionPCH.cpp_dephelp.so CMakeFiles/collisionPCH.cpp_dephelp.dir/PrecompiledHeaders/collisionPCH.cpp.o 

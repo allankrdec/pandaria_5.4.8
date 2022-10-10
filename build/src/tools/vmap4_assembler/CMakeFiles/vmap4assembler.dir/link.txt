@@ -1,1 +1,0 @@
-/usr/bin/c++  -s -std=c++11  -march=native -fno-strict-aliasing -g3 -O3 -DNDEBUG  -rdynamic CMakeFiles/vmap4assembler.dir/VMapAssembler.cpp.o  -o vmap4assembler  -Wl,-rpath,:::::::::::::::::::::::::: ../../server/collision/libcollision.a ../../../dep/g3dlite/libg3dlib.a -lz ../../server/shared/libshared.a -lACE 
