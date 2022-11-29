@@ -754,7 +754,7 @@ SkipCinematics = 0
 #        Range:       1-255
 #        Default:     90
 
-MaxPlayerLevel = 90
+MaxPlayerLevel = 99
 
 #
 #    MinDualSpecLevel

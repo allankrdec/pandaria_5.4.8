@@ -181,14 +181,14 @@ public:
         {
             player->GetSession()->SendNotification(GetText(player, "Вы не можете использовать этот жетон, пока находитесь в бою, на арене или поле боя.", "You may not use this token whilst you are in combat or present in an arena or battleground."));
         }
-        else if (Level <= player->getLevel())
+        else if (Level == player->getLevel())
         {
             ChatHandler(player->GetSession()).SendSysMessage(GetText(player, "Текущий уровень вашего персонажа слишком высокий.", "Your current character level is too high."));
         }
         else
         {
             player->GiveLevel(Level);
-            ChatHandler(player->GetSession()).SendSysMessage(GetText(player, "Спасибо за помощь проекту Pandaria 5.4.8, вы только что повысили уровень своего порсонажа до 90-го.", "Thanks for helping the Pandaria 5.4.8 project, you just leveled up your character to level 90."));
+            ChatHandler(player->GetSession()).SendSysMessage(GetText(player, "Спасибо за помощь проекту Pandaria 5.4.8, вы только что повысили уровень своего порсонажа до up-го.", "Thanks for helping the Pandaria 5.4.8 project, you just leveled up your character to level up."));
             player->DestroyItemCount(item->GetEntry(), 1, true);
             player->SaveToDB();
         }
@@ -236,6 +236,8 @@ void AddSC_custom_items()
     new battle_pay_gold<BattlePay::Gold_80K>("battle_pay_gold_80k");
     new battle_pay_gold<BattlePay::Gold_150K>("battle_pay_gold_150k");
     new battle_pay_level<90>("battle_pay_service_level_90");
+	new battle_pay_level<95>("battle_pay_service_level_95");
+	new battle_pay_level<99>("battle_pay_service_level_99");
     new battle_pay_service<AtLoginFlags::AT_LOGIN_RENAME>("battle_pay_service_rename");
     new battle_pay_service<AtLoginFlags::AT_LOGIN_CHANGE_FACTION>("battle_pay_service_change_faction");
     new battle_pay_service<AtLoginFlags::AT_LOGIN_CHANGE_RACE>("battle_pay_service_change_race");
