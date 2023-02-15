@@ -352,6 +352,8 @@ bool MapManager::CanPlayerEnter(uint32 mapid, Player* player, bool loginCheck)
     // Terrace of Endless Spring additional checks
     if (mapid == 996)
     {
+        return true; //removida verificação
+
         if (!HasCompletedHoF(player, targetDifficulty) || !HasCompletedMogushan(player, targetDifficulty))
             return false;
         if (targetDifficulty == RAID_DIFFICULTY_10MAN_HEROIC || targetDifficulty == RAID_DIFFICULTY_25MAN_HEROIC)
