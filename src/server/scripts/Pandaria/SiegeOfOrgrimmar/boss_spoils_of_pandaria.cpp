@@ -1838,9 +1838,9 @@ struct npc_spoils_ancient_brewmaster_spirit : public ScriptedAI
         if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
         {
             // should be 7.1 in 10 normal
-            me->SetCreateHealth(7100000);
-            me->SetMaxHealth(7100000);
-            me->SetHealth(7100000);
+            me->SetCreateHealth(1100000);
+            me->SetMaxHealth(1100000);
+            me->SetHealth(1100000);
             me->ResetPlayerDamageReq();
         }
 
@@ -1972,9 +1972,9 @@ struct npc_spoils_wise_mistweaver_spirit : public ScriptedAI
         if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
         {
             // should be 7.1 in 10 normal
-            me->SetCreateHealth(7100000);
-            me->SetMaxHealth(7100000);
-            me->SetHealth(7100000);
+            me->SetCreateHealth(1100000);
+            me->SetMaxHealth(1100000);
+            me->SetHealth(1100000);
             me->ResetPlayerDamageReq();
         }
 
@@ -2070,9 +2070,9 @@ struct npc_spoils_nameless_windwalker_spirit : public ScriptedAI
         if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
         {
             // should be 7.1 in 10 normal
-            me->SetCreateHealth(7100000);
-            me->SetMaxHealth(7100000);
-            me->SetHealth(7100000);
+            me->SetCreateHealth(1100000);
+            me->SetMaxHealth(1100000);
+            me->SetHealth(1100000);
             me->ResetPlayerDamageReq();
         }
 
