@@ -261,11 +261,8 @@ class boss_jikun : public CreatureScript
                     // should be 244.0m in 10 normal
                     // me->SetCreateHealth(244000000);
                     // me->SetMaxHealth(244000000);
-                    // me->SetHealth(244000000);
-                    me->SetCreateHealth(4000000);
-                    me->SetMaxHealth(4000000);
-                    me->SetHealth(4000000);
-                    me->ResetPlayerDamageReq();
+                    // me->SetHealth(244000000);                    
+                    // me->ResetPlayerDamageReq();
                 }
 
                 scheduler
@@ -603,11 +600,11 @@ struct npc_young_hatchling_jikun : public ScriptedAI
         if (me->GetInstanceScript() && me->GetInstanceScript()->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
         {
             // should be 1.26m in 10 normal
-            me->SetCreateHealth(1264000);
-            me->SetMaxHealth(1264000);
-            me->SetHealth(1264000);
+            // me->SetCreateHealth(1264000);
+            // me->SetMaxHealth(1264000);
+            // me->SetHealth(1264000);
             
-            me->ResetPlayerDamageReq();
+            // me->ResetPlayerDamageReq();
         }
 
         // set health value depend of current egg health
@@ -722,10 +719,10 @@ struct npc_juvenile : public ScriptedAI
         if (me->GetInstanceScript() && me->GetInstanceScript()->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
         {
             // should be 1.89m in 10 normal
-            me->SetCreateHealth(1897000);
-            me->SetMaxHealth(1897000);
-            me->SetHealth(1897000);
-            me->ResetPlayerDamageReq();
+            // me->SetCreateHealth(1897000);
+            // me->SetMaxHealth(1897000);
+            // me->SetHealth(1897000);
+            // me->ResetPlayerDamageReq();
         }
 
         // set health value depend of current egg health
@@ -800,10 +797,10 @@ struct npc_egg_of_jikun : public ScriptedAI
                     break;
             }
 
-            me->SetCreateHealth(value);
-            me->SetMaxHealth(value);
-            me->SetHealth(value);
-            me->ResetPlayerDamageReq();
+            // me->SetCreateHealth(value);
+            // me->SetMaxHealth(value);
+            // me->SetHealth(value);
+            // me->ResetPlayerDamageReq();
         }
     }
 

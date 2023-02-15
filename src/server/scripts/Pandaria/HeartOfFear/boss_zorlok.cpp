@@ -281,11 +281,11 @@ class boss_zorlok : public CreatureScript
                     // me->SetMaxHealth(174500000);
                     // me->SetHealth(174500000);
 
-                    me->SetCreateHealth(4500000);
-                    me->SetMaxHealth(4500000);
-                    me->SetHealth(4500000);
+                    // me->SetCreateHealth(4500000);
+                    // me->SetMaxHealth(4500000);
+                    // me->SetHealth(4500000);
 
-                    me->ResetPlayerDamageReq();
+                    // me->ResetPlayerDamageReq();
                 }
 
                 std::fill(std::begin(zealousBugs), std::end(zealousBugs), 0);
@@ -326,11 +326,11 @@ class boss_zorlok : public CreatureScript
                     // me->SetMaxHealth(174500000);
                     // me->SetHealth(174500000);
 
-                    me->SetCreateHealth(4500000);
-                    me->SetMaxHealth(4500000);
-                    me->SetHealth(4500000);
+                    // me->SetCreateHealth(4500000);
+                    // me->SetMaxHealth(4500000);
+                    // me->SetHealth(4500000);
                     
-                    me->ResetPlayerDamageReq();
+                    // me->ResetPlayerDamageReq();
                 }
 
                 // Platform Dictionary

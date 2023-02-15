@@ -343,11 +343,8 @@ class boss_durumu : public CreatureScript
                     // should be 261.7m in 10 normal
                     // me->SetCreateHealth(261700000);
                     // me->SetMaxHealth(261700000);
-                    // me->SetHealth(261700000);
-                    me->SetCreateHealth(3700000);
-                    me->SetMaxHealth(3700000);
-                    me->SetHealth(3700000);
-                    me->ResetPlayerDamageReq();
+                    // me->SetHealth(261700000);                    
+                    // me->ResetPlayerDamageReq();
                 }
 
                 me->SetReactState(REACT_DEFENSIVE);
