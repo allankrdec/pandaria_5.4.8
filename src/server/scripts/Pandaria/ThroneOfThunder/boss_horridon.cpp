@@ -421,9 +421,12 @@ class boss_horridon : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 392.0m in 10 normal
-                    me->SetCreateHealth(392000000);
-                    me->SetMaxHealth(392000000);
-                    me->SetHealth(392000000);
+                    // me->SetCreateHealth(392000000);
+                    // me->SetMaxHealth(392000000);
+                    // me->SetHealth(392000000);
+                    me->SetCreateHealth(3000000);
+                    me->SetMaxHealth(3000000);
+                    me->SetHealth(3000000);
                     me->ResetPlayerDamageReq();
                 }
 
@@ -1235,9 +1238,12 @@ struct npc_horridon_trashs : public horridon_tribeAI
             if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
             {
                 // should be 244.0m in 10 normal
-                me->SetCreateHealth(healthValue);
-                me->SetMaxHealth(healthValue);
-                me->SetHealth(healthValue);
+                // me->SetCreateHealth(healthValue);
+                // me->SetMaxHealth(healthValue);
+                // me->SetHealth(healthValue);
+                me->SetCreateHealth(3000000);
+                me->SetMaxHealth(3000000);
+                me->SetHealth(3000000);
                 me->ResetPlayerDamageReq();
             }
         });

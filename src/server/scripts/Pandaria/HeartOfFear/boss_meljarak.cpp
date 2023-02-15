@@ -668,9 +668,12 @@ class npc_meljarak_swarm : public CreatureScript
                 if (_instance && _instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 54.81m in 10 normal
-                    me->SetCreateHealth(54810000);
-                    me->SetMaxHealth(54810000);
-                    me->SetHealth(54810000);
+                    // me->SetCreateHealth(54810000);
+                    // me->SetMaxHealth(54810000);
+                    // me->SetHealth(54810000);
+                    me->SetCreateHealth(5481000);
+                    me->SetMaxHealth(5481000);
+                    me->SetHealth(5481000);
                     me->ResetPlayerDamageReq();
                 }
 

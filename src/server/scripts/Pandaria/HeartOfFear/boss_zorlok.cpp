@@ -277,9 +277,14 @@ class boss_zorlok : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 174.5m in 10 normal
-                    me->SetCreateHealth(174500000);
-                    me->SetMaxHealth(174500000);
-                    me->SetHealth(174500000);
+                    // me->SetCreateHealth(174500000);
+                    // me->SetMaxHealth(174500000);
+                    // me->SetHealth(174500000);
+
+                    me->SetCreateHealth(4500000);
+                    me->SetMaxHealth(4500000);
+                    me->SetHealth(4500000);
+
                     me->ResetPlayerDamageReq();
                 }
 
@@ -317,9 +322,14 @@ class boss_zorlok : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 174.5m in 10 normal
-                    me->SetCreateHealth(174500000);
-                    me->SetMaxHealth(174500000);
-                    me->SetHealth(174500000);
+                    // me->SetCreateHealth(174500000);
+                    // me->SetMaxHealth(174500000);
+                    // me->SetHealth(174500000);
+
+                    me->SetCreateHealth(4500000);
+                    me->SetMaxHealth(4500000);
+                    me->SetHealth(4500000);
+                    
                     me->ResetPlayerDamageReq();
                 }
 

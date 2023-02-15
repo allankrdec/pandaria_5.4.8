@@ -341,9 +341,12 @@ class boss_durumu : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 261.7m in 10 normal
-                    me->SetCreateHealth(261700000);
-                    me->SetMaxHealth(261700000);
-                    me->SetHealth(261700000);
+                    // me->SetCreateHealth(261700000);
+                    // me->SetMaxHealth(261700000);
+                    // me->SetHealth(261700000);
+                    me->SetCreateHealth(3700000);
+                    me->SetMaxHealth(3700000);
+                    me->SetHealth(3700000);
                     me->ResetPlayerDamageReq();
                 }
 

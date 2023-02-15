@@ -312,9 +312,9 @@ class boss_suen : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 219.8m in 10 normal
-                    me->SetCreateHealth(219800000);
-                    me->SetMaxHealth(219800000);
-                    me->SetHealth(219800000);
+                    me->SetCreateHealth(2000000);
+                    me->SetMaxHealth(2000000);
+                    me->SetHealth(2000000);
                     me->ResetPlayerDamageReq();
                 }
 
@@ -928,9 +928,12 @@ class boss_lulin : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 219.8m in 10 normal
-                    me->SetCreateHealth(219800000);
-                    me->SetMaxHealth(219800000);
-                    me->SetHealth(219800000);
+                    // me->SetCreateHealth(219800000);
+                    // me->SetMaxHealth(219800000);
+                    // me->SetHealth(219800000);
+                    me->SetCreateHealth(2000000);
+                    me->SetMaxHealth(2000000);
+                    me->SetHealth(2000000);
                     me->ResetPlayerDamageReq();
                 }
 

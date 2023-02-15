@@ -212,9 +212,12 @@ class boss_garajal : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 117.8m in 10 normal
-                    me->SetCreateHealth(117800000);
-                    me->SetMaxHealth(117800000);
-                    me->SetHealth(117800000);
+                    // me->SetCreateHealth(117800000);
+                    // me->SetMaxHealth(117800000);
+                    // me->SetHealth(117800000);
+                    me->SetCreateHealth(3178000);
+                    me->SetMaxHealth(3178000);
+                    me->SetHealth(3178000);
                     me->ResetPlayerDamageReq();
                 }
 
@@ -249,9 +252,9 @@ class boss_garajal : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 117.8m in 10 normal
-                    me->SetCreateHealth(117800000);
-                    me->SetMaxHealth(117800000);
-                    me->SetHealth(117800000);
+                    me->SetCreateHealth(3178000);
+                    me->SetMaxHealth(3178000);
+                    me->SetHealth(3178000);
                     me->ResetPlayerDamageReq();
                 }
 

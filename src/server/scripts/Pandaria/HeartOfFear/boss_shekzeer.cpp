@@ -197,9 +197,9 @@ class boss_grand_empress_shekzeer : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 117.8m in 10 normal
-                    me->SetCreateHealth(196000000);
-                    me->SetMaxHealth(196000000);
-                    me->SetHealth(196000000);
+                    me->SetCreateHealth(3000000);
+                    me->SetMaxHealth(3000000);
+                    me->SetHealth(3000000);
                     me->ResetPlayerDamageReq();
                 }
             }
@@ -214,9 +214,12 @@ class boss_grand_empress_shekzeer : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 117.8m in 10 normal
-                    me->SetCreateHealth(196000000);
-                    me->SetMaxHealth(196000000);
-                    me->SetHealth(196000000);
+                    // me->SetCreateHealth(196000000);
+                    // me->SetMaxHealth(196000000);
+                    // me->SetHealth(196000000);
+                    me->SetCreateHealth(3000000);
+                    me->SetMaxHealth(3000000);
+                    me->SetHealth(3000000);
                     me->ResetPlayerDamageReq();
                 }
             }

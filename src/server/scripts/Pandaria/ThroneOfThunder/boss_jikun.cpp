@@ -259,9 +259,12 @@ class boss_jikun : public CreatureScript
                 if (instance && instance->instance->GetSpawnMode() == RAID_DIFFICULTY_10MAN_NORMAL)
                 {
                     // should be 244.0m in 10 normal
-                    me->SetCreateHealth(244000000);
-                    me->SetMaxHealth(244000000);
-                    me->SetHealth(244000000);
+                    // me->SetCreateHealth(244000000);
+                    // me->SetMaxHealth(244000000);
+                    // me->SetHealth(244000000);
+                    me->SetCreateHealth(4000000);
+                    me->SetMaxHealth(4000000);
+                    me->SetHealth(4000000);
                     me->ResetPlayerDamageReq();
                 }
 
@@ -603,6 +606,7 @@ struct npc_young_hatchling_jikun : public ScriptedAI
             me->SetCreateHealth(1264000);
             me->SetMaxHealth(1264000);
             me->SetHealth(1264000);
+            
             me->ResetPlayerDamageReq();
         }
 
