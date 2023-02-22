@@ -6,7 +6,7 @@ delete from npc_vendor where entry=90001;
 
 insert into npc_vendor (
 select 90001 as entry, 0 as slot, entry as item, 0 as maxcount, 0 as incrtime, 0 as extendedcost, 1 as type
-item_template where flags>0 and flagsextra = 8192 and itemlevel=90 and bagfamily > 0 and material=3 and  bagfamily <> 128
+from item_template where flags>0 and flagsextra = 8192 and itemlevel=90 and bagfamily > 0 and material=3 and  bagfamily <> 128
 and entry <> 76131 and buyprice in (160000, 360000) and quality=4 order by displayid);
 
 delete from creature where guid=1005024;
