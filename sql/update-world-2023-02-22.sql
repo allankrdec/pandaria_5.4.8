@@ -59,5 +59,4 @@ and subclass > 6 and subclass < 10 order by subclass);
 
 
 delete from creature where guid=1005027;
-insert into creature (guid, id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawntimesecs_max, wander_distance, currentwaypoint, curhealth, curmana, movement_type, npcflag, npcflag2, unit_flags, unit_flags2, dynamicflags, ScriptName, walk_mode) values (1005027, 90004, 870, 0, 0, 9, 1, 0, 0,  -789.511, -4990.88, 2.08533, 6.18701 , 120, 0, 0.0, 0, 1, 0, 0, '0', 0, 0, 0, 0, '', 0.0);
-
+insert into creature (guid, id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawntimesecs_max, wander_distance, currentwaypoint, curhealth, curmana, movement_type, npcflag, npcflag2, unit_flags, unit_flags2, dynamicflags, ScriptName, walk_mode) values (1005027, 90004, 870, 0, 0, 9, 1, 0, 0,   -789.915, -4983.93, 3.13945, 0.202275 , 120, 0, 0.0, 0, 1, 0, 0, '0', 0, 0, 0, 0, '', 0.0);
