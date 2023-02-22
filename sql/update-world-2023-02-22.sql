@@ -26,4 +26,3 @@ and name like '%Glyph%' and name not like '%Deprecated%' and name not like '%OLD
 
 delete from creature where guid=1005025;
 insert into creature (guid, id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawntimesecs_max, wander_distance, currentwaypoint, curhealth, curmana, movement_type, npcflag, npcflag2, unit_flags, unit_flags2, dynamicflags, ScriptName, walk_mode) values (1005025, 90002, 870, 0, 0, 9, 1, 0, 0,  -789.546, -4999.48, 2.05675, 0.121382 , 120, 0, 0.0, 0, 1, 0, 0, '0', 0, 0, 0, 0, '', 0.0);
-
