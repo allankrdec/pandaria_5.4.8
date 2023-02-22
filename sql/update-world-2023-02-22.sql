@@ -24,7 +24,7 @@ insert into creature_template (entry, difficulty_entry_1, difficulty_entry_2, di
 delete from npc_vendor where entry=90002;
 
 insert into npc_vendor (
-select 90002 as entry, (@row_number:=@row_number + 1) as slot as slot, entry as item, 0 as maxcount, 0 as incrtime, 0 as extendedcost, 1 as type
+select 90002 as entry, (@row_number:=@row_number + 1) as slot, entry as item, 0 as maxcount, 0 as incrtime, 0 as extendedcost, 1 as type
 from item_template where flags>0 and flagsextra = 8192 and bagfamily > 0 and material=4
 and name like 'Glyph%' and name not like '%Deprecated%' and name not like '%OLDGlyph%' and flags in (64, 104046) 
 and subclass <= 3 order by subclass);
