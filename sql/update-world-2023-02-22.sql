@@ -9,7 +9,8 @@ SET @row_number = 0;
 insert into npc_vendor (
 select 90001 as entry, (@row_number:=@row_number + 1) as slot, entry as item, 0 as maxcount, 0 as incrtime, 0 as extendedcost, 1 as type
 from item_template where flags>0 and flagsextra = 8192 and itemlevel=90 and bagfamily > 0 and material=3 and  bagfamily <> 128
-and entry <> 76131 and buyprice in (160000, 360000) and (quality=4 or name like '%Diamond') order by displayid, entry);
+and entry <> 76131 and buyprice in (160000, 360000) and displayid in (112219, 112221, 112223, 112246, 112247, 88911, 112250, 112252) 
+order by displayid, entry);
 
 delete from creature where guid=1005024;
 insert into creature (guid, id, map, zoneId, areaId, spawnMask, phaseMask, modelid, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, spawntimesecs_max, wander_distance, currentwaypoint, curhealth, curmana, movement_type, npcflag, npcflag2, unit_flags, unit_flags2, dynamicflags, ScriptName, walk_mode) values (1005024, 90001, 870, 0, 0, 9, 1, 0, 0,  -784.787, -5037.24, 2.19423, 0.322454, 120, 0, 0.0, 0, 1, 0, 0, '0', 0, 0, 0, 0, '', 0.0);
