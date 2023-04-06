@@ -94,7 +94,8 @@ class instance_firelands : public InstanceMapScript
                         break;
                     case NPC_BALEROC:
                         uiBalerocGUID = creature->GetGUID();
-                        creature->SetPhaseMask((GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE) ? 1 : 2, true);
+                        //creature->SetPhaseMask((GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE) ? 1 : 2, true);
+                        creature->SetPhaseMask((GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) ? 1 : 2, true);
                         break;
                     case NPC_CIRCLE_OF_THRONES_PORTAL:
                         creaturePortals.push_back(creature);
@@ -127,7 +128,8 @@ class instance_firelands : public InstanceMapScript
                 {
                     case GO_FIRE_WALL_BALEROC:
                         uiFirewallBalerockGUID = go->GetGUID();
-                        HandleGameObject(0, (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE), go);
+                        //HandleGameObject(0, (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE), go);
+                        HandleGameObject(0, (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE), go);
                         break;
                     case GO_STICKY_WEB:
                     case GO_RAID_BRIDGE_FORMING:
@@ -242,7 +244,8 @@ class instance_firelands : public InstanceMapScript
                 if (!InstanceScript::SetBossState(type, state))
                     return false;
 
-                bool balerocAvailable = (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE);
+                //bool balerocAvailable = (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE) && (GetBossState(DATA_ALYSRAZOR)==DONE);
+                bool balerocAvailable = (GetBossState(DATA_SHANNOX)==DONE) && (GetBossState(DATA_RHYOLITH)==DONE) && (GetBossState(DATA_BETHTILAC)==DONE);
 
                 switch (type)
                 {
@@ -294,8 +297,8 @@ class instance_firelands : public InstanceMapScript
                     case DATA_BALEROC:
                         if (GetBossState(DATA_SHANNOX) != DONE)
                             return false;
-                        if (GetBossState(DATA_ALYSRAZOR) != DONE)
-                            return false;
+                        //if (GetBossState(DATA_ALYSRAZOR) != DONE)
+                        //    return false;
                         if (GetBossState(DATA_BETHTILAC) != DONE)
                             return false;
                         if (GetBossState(DATA_RHYOLITH) != DONE)
