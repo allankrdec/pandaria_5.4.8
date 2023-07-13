@@ -1,4 +1,4 @@
-## Install Requirements Debian 11/12 ##
+## Install Requirements Debian 11 ##
 **Dependencias**
 
 $sudo apt-get install build-essential autoconf libtool gcc g++ make cmake subversion git patch wget links zip unzip openssl libssl-dev libreadline-dev zlib1g-dev libbz2-dev git-core libace-dev libncurses5-dev libace-dev libboost-all-dev -y
