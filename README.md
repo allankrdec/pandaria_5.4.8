@@ -19,7 +19,7 @@ Geodata: https://mega.nz/file/EAZUmZiD#PxdHN7jcEKCA8qaIBTIWLWLGZcT5PdsKfIgkygTZg
 
 ## Build Ubuntu 20.04
 Read file [Build](BUILD.md)
-## Build Debian 11/12
+## Build Debian 11
 Read file [Build](BUILD_DEBIAN.md)
 
 ## Copyright
