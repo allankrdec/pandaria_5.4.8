@@ -1,0 +1,6 @@
+version=2
+server=akamai
+	location=http://wow.speedylinux.com.br/wow/
+server=limelight
+	location=http://wow.speedylinux.com.br/wow/
+manifest_partial=wow-18414-E68C6C849BBD16D2A8A153AFC865062F.mfil

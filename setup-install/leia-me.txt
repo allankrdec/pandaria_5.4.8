@@ -1,0 +1,4 @@
+Para evitar que o executável substitua a configuração no arquivo wow.mfil
+abra um editor de arquivos binários, procure as urls que tenham parte do nome
+patch.battle.net:1119 e altera algo para que pare de funcionar.
+
