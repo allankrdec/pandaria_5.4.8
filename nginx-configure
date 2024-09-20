@@ -1,0 +1,10 @@
+stream {
+    upstream backend {
+        server IP:8085;  # O IP e porta de destino
+    }
+
+    server {
+        listen 8085;  # Porta em que o Nginx vai escutar
+        proxy_pass backend;  # Direciona o tráfego para o backend definido acima
+    }
+}
