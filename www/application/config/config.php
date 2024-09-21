@@ -1,4 +1,4 @@
-<?php
+.<?php
 /**
  * Configuration for the web interface of a World of Warcraft private server.
  *
@@ -8,8 +8,8 @@
  **/
 
 // Basic Configuration - Adjust to match your website's details.
-$config['baseurl'] = "http://192.168.0.57"; //  Must be a valid URL to prevent issues with loading images and templates.
-$config['page_title'] = "Simple Register"; // The title of your website as displayed in the browser tab.
+$config['baseurl'] = "http://wow-game.speedylinux.com.br"; //  Must be a valid URL to prevent issues with loading images and templates.
+$config['page_title'] = "Registro simples - WOW"; // The title of your website as displayed in the browser tab.
 $config['language'] = "portugues"; // The default language for your website.
 $config['supported_langs'] = [ // Define supported languages here. You can remove any language you do not support.
     // To disable the language changer, set as: $config['supported_langs'] = false;
@@ -28,13 +28,13 @@ $config['supported_langs'] = [ // Define supported languages here. You can remov
 ];
 
 // Debug Mode - Enable it to display errors during troubleshooting.
-$config['debug_mode'] = false; // Set to true to enable debug mode if you encounter blank screens or errors.
+$config['debug_mode'] = true; // Set to true to enable debug mode if you encounter blank screens or errors.
 // ⚠️ **Important: Remember to disable debug mode** once you have resolved the issues. Debug mode should be set to `false` before deploying the website in a production environment or going live. This helps to ensure security and performance are not compromised.
 
 // Server Information - Customize this with your server's specific details.
 $config['realmlist'] = 'wow.speedylinux.com.br'; // The Realmlist of your server.
 $config['patch_location'] = 'http://mypatch.com/patch.mpq'; // URL to download the patch if available. Leave empty if not applicable.
-$config['game_version'] = '3.3.5a (12340)'; // The version of the game that your server is running.
+$config['game_version'] = '5.4.8 (18414)'; // The version of the game that your server is running.
 
 /* Server Expansion Settings - Choose your server's expansion by setting the corresponding number.
 0 = Classic
@@ -58,7 +58,7 @@ Core Type:
 5 = CMangos
 10 = etc
  */
-$config['server_core'] = 0; // '0' corresponds to TrinityCore.
+$config['server_core'] = 5; // '0' corresponds to TrinityCore.
 
 // Battle.net Support - Enable this if your server supports the Battle.net feature for auth (WoD/Legion/BFA cores).
 $config['battlenet_support'] = false;

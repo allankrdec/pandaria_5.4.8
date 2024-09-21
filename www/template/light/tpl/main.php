@@ -25,8 +25,8 @@ require_once 'header.php'; ?>
                     <a class="nav-item nav-link" id="nav-howtoconnect-tab" data-toggle="tab"
                        href="#nav-howtoconnect" role="tab" aria-controls="nav-howtoconnect" aria-selected="false"><?php elang('how_to_connect'); ?></a>
                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
-                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('contact'); ?></a>
-                    <?php if(!empty(get_config('supported_langs'))) { ?>
+                       role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('contact-disable'); ?></a>
+                    <?php if(!empty(get_config('supported_langs_'))) { ?>
                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="modal" data-target="#lang-modal"
                        role="tab" aria-controls="nav-contact" aria-selected="false"><?php elang('change_lang_head'); ?></a>
                     <?php } ?>

@@ -82,10 +82,18 @@ class status
     public static function get_top_arenapoints($realmID)
     {
         $queryBuilder = database::$chars[$realmID]->createQueryBuilder();
-        $queryBuilder->select("name, race, class, gender, level, arenaPoints")
-            ->from("characters")
-            ->orderBy("arenaPoints", "DESC")
-            ->setMaxResults(10);
+	if (get_config('expansion') == 4 ) {
+            $queryBuilder->select("name, race, class, gender, level, (select total_count from character_currency where currency = 390 and guid = characters.guid) as arenaPoints")
+                ->from("characters")
+                ->orderBy("6", "DESC")
+                ->setMaxResults(10);
+        } else  {
+	
+        	$queryBuilder->select("name, race, class, gender, level, arenaPoints")
+	            ->from("characters")
+	            ->orderBy("arenaPoints", "DESC")
+	            ->setMaxResults(10);
+	}
         $statement = $queryBuilder->executeQuery();
         $datas = $statement->fetchAllAssociative();
 
@@ -103,6 +111,11 @@ class status
                 ->from("characters")
                 ->orderBy("honorLevel", "DESC")
                 ->addOrderBy("honor", "DESC")
+                ->setMaxResults(10);
+        } else if (get_config('expansion') == 4) {
+            $queryBuilder->select('name, race, class, gender, level, (select total_count from character_currency where currency = 392 and guid = characters.guid) as totalHonorPoints')
+                ->from("characters")
+                ->orderBy("6", "DESC")
                 ->setMaxResults(10);
         } else {
             $queryBuilder->select('name, race, class, gender, level, totalHonorPoints')
