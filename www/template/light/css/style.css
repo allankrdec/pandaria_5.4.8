@@ -105,4 +105,27 @@ nav > div a.nav-item.nav-link:focus {
 
 td, th {
     text-align: center;
+
+}
+
+.modal-mobile-control {
+  min-width: 80%;
+}
+
+.disable-modile {
+ 
+}
+
+@media (max-width: 50em) {
+  .modal-mobile-control {
+    min-width: 98% !important;
+  }    
+  .disable-modile {
+    display: none;            
+  }   
+}
+
+
+.table-scroll {
+	overflow: auto;
 }
