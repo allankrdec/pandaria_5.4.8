@@ -12,3 +12,7 @@ delete from spell_target_position where id = 203755;
 insert into spell_target_position (id, effIndex, target_map, target_position_x, target_position_y, target_position_z, target_orientation) values (203755, 0, 730, 851.307, 1067.76, -10.0183, 4.50656);
 update spell_target_position  set target_map=646, target_position_x = 909.809, target_position_y=502.65  ,target_position_z= -49.2188, target_orientation=0.158003 where id = 33;
 update gameobject_template set data0=0  where entry=99102;
+
+/*correção de NPCs da raide coroa do gelo*/
+update creature set position_x = 4390.85 where id=37534;
+update creature set position_x = 4390.85 where id=37534;
