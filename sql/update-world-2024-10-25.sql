@@ -1,0 +1,12 @@
+/*Ajustando preços dos items de herança lv 582*/
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105683;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105684;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105685;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105686;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105687;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105688;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105689;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105690;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105691;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105692;
+update item_template set BuyPrice=160000000, sellPrice=16000000, requiredLevel=90 where entry=105693;
