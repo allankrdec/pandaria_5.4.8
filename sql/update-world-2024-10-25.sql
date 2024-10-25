@@ -33,3 +33,9 @@ update npc_vendor set entry=300003 where entry=90000 and item=105690;
 update npc_vendor set entry=300003 where entry=90000 and item=105691;
 update npc_vendor set entry=300003 where entry=90000 and item=105692;
 update npc_vendor set entry=300003 where entry=90000 and item=105693;
+
+/*Ajustando LV para item da capa lendária*/
+update item_template set RequiredLevel=99, requiredReputationFaction= 2594, RequiredReputationRank=4 where entry=102457;
+
+/*alterando local do vendedor de herança*/
+update creature set map=870, zoneId=6757, areaId= 6820, position_x=-41.615, position_y=-5366.786, position_z=150.1137, orientation=3.760 where guid=1005101;
