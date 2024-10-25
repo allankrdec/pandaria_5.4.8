@@ -409,3 +409,5 @@ insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, 
 insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) values (71865, 105857, 50.0, 'RAID_25MAN_NORMAL', 0, -105857, 2);
 insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) values (71865, 105868, 50.0, 'RAID_10MAN_HEROIC', 0, -105868, 1);
 insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) values (71865, 105868, 50.0, 'RAID_25MAN_HEROIC', 0, -105868, 2);
+
+update creature_loot_template set chanceorquestchance=3.5 where entry=71865 and chanceorquestchance=5;
