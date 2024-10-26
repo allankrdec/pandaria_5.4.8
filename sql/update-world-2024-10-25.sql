@@ -411,3 +411,20 @@ insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, 
 insert into creature_loot_template (entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) values (71865, 105868, 50.0, 'RAID_25MAN_HEROIC', 0, -105868, 2);
 
 update creature_loot_template set chanceorquestchance=3.5 where entry=71865 and chanceorquestchance=5;
+
+/*tentando resolver problema das quests chamado heroismo planolto do crepusculo*/
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0 where id=26960;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=26975;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=27044;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=26997;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=29100;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=29102;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=29158;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=29156;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=27060;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=28832;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0  where id=27064;
+update quest_template set flags=65536, prevquestid=0, nextquestid=0, NextQuestIdChain=0 where id=26977;
+update creature_questender  set id=2439 where quest=26997;
+update creature_questender  set id=2439 where quest=27064;
+update creature_questender  set id=44807 where quest=27060;
