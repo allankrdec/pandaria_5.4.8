@@ -1,5 +1,5 @@
 /*Correção do item da capa lendaria*/
-update item_template set RequiredLevel=99, requiredReputationFaction= 1359, RequiredReputationRank=8 where entry=102457;
+update item_template set RequiredLevel=99, requiredReputationFaction= 1359, RequiredReputationRank=7 where entry=102457;
 
 /*Adicionando reputacao mínima aos itens de subir de level*/
 update item_template set requiredReputationFaction=1435, requiredreputationrank=4 where entry=110020;
