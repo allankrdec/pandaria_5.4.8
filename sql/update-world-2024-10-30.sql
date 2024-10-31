@@ -11,3 +11,7 @@ update creature_loot_template set ChanceOrQuestChance=100 where item=24361;
 /*Adicionando item ao loot do boss 17941*/
 delete from creature_loot_template where entry=17941 and item=31336;
 insert into creature_loot_template(entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) value(17941, 31336, 100, 'DUNGEON_NORMAL', 1, 1, 1) ;
+
+
+/*Ajustando aparencia do vendedor 300003*/
+update creature_template set modelid1=4527 where entry=300003;
