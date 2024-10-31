@@ -15,6 +15,8 @@ values (969894, 2, 7, -1, 'Blade of Wizardry', 43859, 3, 0, 8704, 0, 0.9605, 1.0
 delete from creature_loot_template where entry=17941 and item=969894;
 insert into creature_loot_template(entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) value(17941, 969894, 100, '', 0, 1, 1) ;
 update creature_loot_template set lootmode='', groupid=0 where entry=17941 and ChanceOrQuestChance=100;
+delete from creature_loot_template where entry=17941 and item=59039;
+insert into creature_loot_template(entry, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount) value(17941, 59039, 100, '', 0, 1, 1) ;
 
 /*Ajustando aparencia do vendedor 300003*/
 update creature_template set modelid1=38689, scale=3.5 where entry=300003;
