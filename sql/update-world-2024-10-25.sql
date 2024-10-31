@@ -1,15 +1,15 @@
 /*Ajustando preços dos items de herança lv 582*/
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105683;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105684;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105685;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105686;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105687;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105688;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105689;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105690;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105691;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105692;
-update item_template set BuyPrice=260000000, sellPrice=26000000, requiredLevel=90 where entry=105693;
+update item_template set BuyPrice=260000000, sellPrice=20000000, requiredLevel=90 where entry=105683;
+update item_template set BuyPrice=260000000, sellPrice=10000000, requiredLevel=90 where entry=105684;
+update item_template set BuyPrice=260000000, sellPrice=20000000, requiredLevel=90 where entry=105685;
+update item_template set BuyPrice=260000000, sellPrice=20000000, requiredLevel=90 where entry=105686;
+update item_template set BuyPrice=260000000, sellPrice=10000000, requiredLevel=90 where entry=105687;
+update item_template set BuyPrice=260000000, sellPrice=10000000, requiredLevel=90 where entry=105688;
+update item_template set BuyPrice=260000000, sellPrice=13000000, requiredLevel=90 where entry=105689;
+update item_template set BuyPrice=260000000, sellPrice=20000000, requiredLevel=90 where entry=105690;
+update item_template set BuyPrice=260000000, sellPrice=10000000, requiredLevel=90 where entry=105691;
+update item_template set BuyPrice=260000000, sellPrice=20000000, requiredLevel=90 where entry=105692;
+update item_template set BuyPrice=260000000, sellPrice=10000000, requiredLevel=90 where entry=105693;
 
 
 /*criando novo vendedor dos itens 582*/
