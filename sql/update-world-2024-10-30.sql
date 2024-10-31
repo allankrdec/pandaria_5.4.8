@@ -14,7 +14,7 @@ insert into creature_loot_template(entry, item, ChanceOrQuestChance, lootmode, g
 
 
 /*Ajustando aparencia do vendedor 300003*/
-update creature_template set modelid1=4527 where entry=300003;
+update creature_template set modelid1=38689 where entry=300003;
 
 /*Ajustando loot do ordos*/
 update creature_loot_template set chanceorquestchance=10 where entry=72057;
