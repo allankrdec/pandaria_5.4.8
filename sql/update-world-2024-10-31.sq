@@ -1,0 +1,2 @@
+/*Correção de posição da creature*/
+update creature set position_x=-1019.36, position_y=-5005.96, position_z=3.1472 where id=71919;
