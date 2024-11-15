@@ -6,6 +6,7 @@ update creature_loot_template set chanceorquestchance=20 where entry=72057;
 
 /*ajustando nivels das criaturas na ilha perene*/
 
+
 /*restore creature*/
 update creature_template set difficulty_entry_1=0, difficulty_entry_2=0, difficulty_entry_3=0, difficulty_entry_4=0, difficulty_entry_5=0, KillCredit1=0, KillCredit2=0, modelid1=51263, modelid2=0, modelid3=0, modelid4=0, name='Windfeather Chick', femaleName='0', subname=null, IconName=null, gossip_menu_id=0, minlevel=90, maxlevel=90, exp=4, exp_unk=0, faction_A=7, faction_H=7, npcflag='0', npcflag2=0, speed_walk=1.0, speed_run=1.14286, scale=1.0, rank=6, mindmg=8312.0, maxdmg=9507.0, dmgschool=0, attackpower=41039, dmg_multiplier=1.0, baseattacktime=2000, rangeattacktime=2000, unit_class=1, unit_flags=32768, unit_flags2=2048, dynamicflags=0, family=125, trainer_type=0, trainer_class=0, trainer_race=0, minrangedmg=0.0, maxrangedmg=0.0, rangedattackpower=0, type=1, type_flags=1, type_flags2=0, lootid=71143, pickpocketloot=0, skinloot=0, resistance1=0, resistance2=0, resistance3=0, resistance4=0, resistance5=0, resistance6=0, spell1=0, spell2=0, spell3=0, spell4=0, spell5=0, spell6=0, spell7=0, spell8=0, PetSpellDataId=0, VehicleId=0, mingold=1100, maxgold=1200, AIName='', MovementType=1, InhabitType=1, HoverHeight=1.0, Health_mod=0.4, Mana_mod=1.0, Mana_mod_extra=1.0, Armor_mod=1.0, RacialLeader=0, questItem1=105715, questItem2=0, questItem3=0, questItem4=0, questItem5=0, questItem6=0, movementId=0, RegenHealth=1, VignetteID=0, TrackingQuestID=0, mechanic_immune_mask=0, flags_extra=0, ScriptName='npc_timeless_cranes', VerifiedBuild=18414 where entry=71143;
 update creature_template set difficulty_entry_1=0, difficulty_entry_2=0, difficulty_entry_3=0, difficulty_entry_4=0, difficulty_entry_5=0, KillCredit1=0, KillCredit2=0, modelid1=39554, modelid2=0, modelid3=0, modelid4=0, name='Windfeather Nestkeeper', femaleName='0', subname=null, IconName=null, gossip_menu_id=0, minlevel=90, maxlevel=90, exp=4, exp_unk=0, faction_A=7, faction_H=7, npcflag='0', npcflag2=0, speed_walk=1.0, speed_run=1.14286, scale=1.0, rank=0, mindmg=8312.0, maxdmg=9507.0, dmgschool=0, attackpower=41039, dmg_multiplier=1.0, baseattacktime=2000, rangeattacktime=2000, unit_class=1, unit_flags=0, unit_flags2=2048, dynamicflags=0, family=125, trainer_type=0, trainer_class=0, trainer_race=0, minrangedmg=0.0, maxrangedmg=0.0, rangedattackpower=0, type=1, type_flags=1, type_flags2=0, lootid=72761, pickpocketloot=0, skinloot=0, resistance1=0, resistance2=0, resistance3=0, resistance4=0, resistance5=0, resistance6=0, spell1=0, spell2=0, spell3=0, spell4=0, spell5=0, spell6=0, spell7=0, spell8=0, PetSpellDataId=0, VehicleId=0, mingold=3000, maxgold=4000, AIName='SmartAI', MovementType=1, InhabitType=1, HoverHeight=1.0, Health_mod=1.0, Mana_mod=1.0, Mana_mod_extra=1.0, Armor_mod=1.0, RacialLeader=0, questItem1=105715, questItem2=0, questItem3=0, questItem4=0, questItem5=0, questItem6=0, movementId=0, RegenHealth=1, VignetteID=0, TrackingQuestID=0, mechanic_immune_mask=0, flags_extra=0, ScriptName='', VerifiedBuild=18414 where entry=72761;
@@ -150,28 +151,46 @@ update creature_template set difficulty_entry_1=0, difficulty_entry_2=0, difficu
 update creature_template set difficulty_entry_1=0, difficulty_entry_2=0, difficulty_entry_3=0, difficulty_entry_4=0, difficulty_entry_5=0, KillCredit1=0, KillCredit2=0, modelid1=38689, modelid2=0, modelid3=0, modelid4=0, name='Vendedor de Herança', femaleName='0', subname='', IconName='', gossip_menu_id=0, minlevel=93, maxlevel=93, exp=0, exp_unk=0, faction_A=35, faction_H=35, npcflag='129', npcflag2=0, speed_walk=1.0, speed_run=1.14286, scale=3.5, rank=0, mindmg=5.0, maxdmg=7.0, dmgschool=0, attackpower=32, dmg_multiplier=1.0, baseattacktime=2000, rangeattacktime=2000, unit_class=1, unit_flags=768, unit_flags2=2048, dynamicflags=0, family=0, trainer_type=0, trainer_class=0, trainer_race=0, minrangedmg=3.0, maxrangedmg=4.0, rangedattackpower=100, type=7, type_flags=0, type_flags2=0, lootid=0, pickpocketloot=0, skinloot=0, resistance1=0, resistance2=0, resistance3=0, resistance4=0, resistance5=0, resistance6=0, spell1=0, spell2=0, spell3=0, spell4=0, spell5=0, spell6=0, spell7=0, spell8=0, PetSpellDataId=0, VehicleId=0, mingold=0, maxgold=0, AIName='', MovementType=0, InhabitType=3, HoverHeight=1.0, Health_mod=1.0, Mana_mod=1.0, Mana_mod_extra=1.0, Armor_mod=1.0, RacialLeader=0, questItem1=0, questItem2=0, questItem3=0, questItem4=0, questItem5=0, questItem6=0, movementId=0, RegenHealth=2, VignetteID=0, TrackingQuestID=0, mechanic_immune_mask=0, flags_extra=2, ScriptName='', VerifiedBuild=18414 where entry=300003;
 
 
+/*restaurando level das criaturas*/
+update creature_template set minlevel=91, maxlevel=91, health_mod=9.0, mindmg=11222.0, maxdmg=14388.0 where entry=72775;
+update creature_template set minlevel=91, maxlevel=91, health_mod=3.5, mindmg=10922.0, maxdmg=11388.0 where entry=72777;
+
+update creature_template set minlevel=91, maxlevel=91, health_mod=1.0, mindmg=9222.0, maxdmg=10388.0 where entry=72877;
+update creature_template set minlevel=92, maxlevel=92, health_mod=20.0, mindmg=11222.0, maxdmg=14388.0 where entry=72888;
+update creature_template set minlevel=91, maxlevel=91, health_mod=8.5, mindmg=10922.0, maxdmg=13388.0 where entry=72895;
+update creature_template set minlevel=92, maxlevel=92, health_mod=18.0, mindmg=11222.0, maxdmg=14388.0 where entry=72896;
+update creature_template set minlevel=92, maxlevel=92, health_mod=17.0, mindmg=10922.0, maxdmg=13388.0 where entry=72897;
+update creature_template set minlevel=93, maxlevel=93, health_mod=60.0, mindmg=12221.0, maxdmg=15388.0 where entry=72898;
+update creature_template set minlevel=92, maxlevel=92, health_mod=27.0, mindmg=12221.0, maxdmg=15388.0 where entry=73172;
+update creature_template set minlevel=92, maxlevel=92, health_mod=30.0, mindmg=12221.0, maxdmg=15388.0 where entry=73175;
+update creature_template set minlevel=91, maxlevel=91, health_mod=5.0, mindmg=17839.0, maxdmg=24339.0 where entry=73277;
+update creature_template set minlevel=91, maxlevel=91, health_mod=15.0, mindmg=14839.0, maxdmg=21339.0 where entry=73169;
+update creature_template set minlevel=91, maxlevel=91, health_mod=16.0, mindmg=14839.0, maxdmg=21339.0 where entry=73171;
 
 /*ajust creatures*/
 /*sobe todos do nivel 90 para 91*/
-update creature_template set minlevel=91, maxlevel=91 where entry in(select distinct id from creature where zoneid=6757 and map=870 ) and minlevel in (90);
+update creature_template set minlevel=97, maxlevel=97 where entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (90);
+
 
 
 /*upando level da areaid=6825*/
-update creature_template set minlevel=96, maxlevel=96, health_mod=health_mod*1.5, mindmg=mindmg*1.5, maxdmg=maxdmg*1.5, attackpower=attackpower*1.5 where entry <>72057 and entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (91, 92, 96);
-update creature_template set minlevel=97, maxlevel=97, health_mod=health_mod*2.0, mindmg=mindmg*2.0, maxdmg=maxdmg*2.0, attackpower=attackpower*2.0 where entry <>72057 and entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (93, 94);
+update creature_template set minlevel=98, maxlevel=98, dmg_multiplier=10  where entry <>72057 and entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (91);
+update creature_template set minlevel=99, maxlevel=98, dmg_multiplier=10 where entry <>72057 and entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (92);
+update creature_template set minlevel=100, maxlevel=100, dmg_multiplier=10 where entry <>72057 and entry in(select distinct id from creature where zoneid=6757 and map=870) and minlevel in (93);
+
+update creature_template set health_mod = health_mod * 8.0, mindmg = mindmg * 8.0, maxdmg = maxdmg * 8.0 where entry in (72892, 72894, 72895, 72897, 72896, 72888);
 
 
 /*ajustando hp lv 97 e 98*/
-update creature_template set health_mod = 78.0*3, mindmg=15887.3 * 180, maxdmg=18465.6*180, scale=1.3, attackpower=45229*180 where entry=300001;
-update creature_template set health_mod = 36.0*3, mindmg=14588.6 * 180, maxdmg=18704.4*180, scale=1.3, attackpower=45229*180 where entry=300002;
+update creature_template set minlevel=99, maxlevel=99, health_mod = 78.0*4, mindmg=15887.3, maxdmg=18465.6, scale=1.3, attackpower=45229, dmg_multiplier=300 where entry=300001;
+update creature_template set minlevel=100, maxlevel=100, health_mod = 36.0*4, mindmg=14588.6, maxdmg=18704.4, scale=1.3, attackpower=45229, dmg_multiplier=300 where entry=300002;
 
-/*ordor*/
-update creature_template set minlevel=99, maxlevel=99 where entry=72057;
+update creature_template set minlevel=100, maxlevel=100 where entry in (72057, 73171);
 
 
-update creature_classlevelstats set basehp3=107596*1.00, basehp4=467860*1.00, basearmor=basearmor*1.00 where level=95;
-update creature_classlevelstats set basehp3=107596*1.10, basehp4=467860*1.10, basearmor=basearmor*1.10 where level=96;
-update creature_classlevelstats set basehp3=107596*1.20, basehp4=467860*1.20, basearmor=basearmor*1.20 where level=97;
-update creature_classlevelstats set basehp3=107596*1.30, basehp4=467860*1.30, basearmor=basearmor*1.30 where level=98;
-update creature_classlevelstats set basehp3=107596*1.40, basehp4=467860*1.40, basearmor=basearmor*1.40 where level=99;
-update creature_classlevelstats set basehp3=107596*1.50, basehp4=467860*1.50, basearmor=basearmor*1.50 where level=100;
+update creature_classlevelstats set basehp3=107596*1.10, basehp4=467860*1.10, basearmor=basearmor*1.10 where level=95;
+update creature_classlevelstats set basehp3=107596*1.20, basehp4=467860*1.20, basearmor=basearmor*1.20 where level=96;
+update creature_classlevelstats set basehp3=107596*1.30, basehp4=467860*1.30, basearmor=basearmor*1.30 where level=97;
+update creature_classlevelstats set basehp3=107596*1.40, basehp4=467860*1.40, basearmor=basearmor*1.40 where level=98;
+update creature_classlevelstats set basehp3=107596*1.50, basehp4=467860*1.50, basearmor=basearmor*1.50 where level=99;
+update creature_classlevelstats set basehp3=107596*1.60, basehp4=467860*1.60, basearmor=basearmor*1.60 where level=100;
