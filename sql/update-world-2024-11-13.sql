@@ -182,15 +182,15 @@ update creature_template set health_mod = health_mod * 8.0, mindmg = mindmg * 8.
 
 
 /*ajustando hp lv 97 e 98*/
-update creature_template set minlevel=99, maxlevel=99, health_mod = 78.0*4, mindmg=15887.3, maxdmg=18465.6, scale=1.3, attackpower=45229, dmg_multiplier=300 where entry=300001;
-update creature_template set minlevel=100, maxlevel=100, health_mod = 36.0*4, mindmg=14588.6, maxdmg=18704.4, scale=1.3, attackpower=45229, dmg_multiplier=300 where entry=300002;
+update creature_template set minlevel=99, maxlevel=99, health_mod = 78.0*4, mindmg=15887.3, maxdmg=18465.6, scale=1.3, attackpower=45229, dmg_multiplier=200 where entry=300001;
+update creature_template set minlevel=100, maxlevel=100, health_mod = 36.0*4, mindmg=14588.6, maxdmg=18704.4, scale=1.3, attackpower=45229, dmg_multiplier=200 where entry=300002;
 
 update creature_template set minlevel=100, maxlevel=100 where entry in (72057, 73171);
 
 
-update creature_classlevelstats set basehp3=107596*1.10, basehp4=467860*1.10, basearmor=basearmor*1.10 where level=95;
-update creature_classlevelstats set basehp3=107596*1.20, basehp4=467860*1.20, basearmor=basearmor*1.20 where level=96;
-update creature_classlevelstats set basehp3=107596*1.30, basehp4=467860*1.30, basearmor=basearmor*1.30 where level=97;
-update creature_classlevelstats set basehp3=107596*1.40, basehp4=467860*1.40, basearmor=basearmor*1.40 where level=98;
-update creature_classlevelstats set basehp3=107596*1.50, basehp4=467860*1.50, basearmor=basearmor*1.50 where level=99;
-update creature_classlevelstats set basehp3=107596*1.60, basehp4=467860*1.60, basearmor=basearmor*1.60 where level=100;
+update creature_classlevelstats set basehp3=107596*1.00, basehp4=467860*1.00, basearmor=basearmor*1.00 where level=95;
+update creature_classlevelstats set basehp3=107596*1.10, basehp4=467860*1.10, basearmor=basearmor*1.10 where level=96;
+update creature_classlevelstats set basehp3=107596*1.20, basehp4=467860*1.20, basearmor=basearmor*1.20 where level=97;
+update creature_classlevelstats set basehp3=107596*1.30, basehp4=467860*1.30, basearmor=basearmor*1.30 where level=98;
+update creature_classlevelstats set basehp3=107596*1.40, basehp4=467860*1.40, basearmor=basearmor*1.40 where level=99;
+update creature_classlevelstats set basehp3=107596*1.50, basehp4=467860*1.50, basearmor=basearmor*1.50 where level=100;
