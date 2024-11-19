@@ -12,6 +12,7 @@ update creature_template set difficulty_entry_1=0, difficulty_entry_2=0, difficu
 
 update creature_template set health_mod=health_mod * 50 where entry = 72805;
 update creature_template set health_mod=health_mod * 6 where entry = 72777;
-update creature_template set minlevel=98, maxlevel=98 where entry in (73166, 73277, 72909, 73163);
+update creature_template set minlevel=98, maxlevel=98 where entry in (73166, 73277, 72909);
+update creature_template set minlevel=97, maxlevel=97 where entry in (73163);
 update creature_template set minlevel=99, maxlevel=99, health_mod=50 where entry in (72970);
 update creature_template set health_mod=health_mod * 10 where entry in (72762, 72844, 73718, 72841); 
