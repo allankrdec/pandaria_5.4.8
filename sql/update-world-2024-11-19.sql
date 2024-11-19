@@ -16,3 +16,14 @@ update creature_template set minlevel=98, maxlevel=98 where entry in (73166, 732
 update creature_template set minlevel=97, maxlevel=97 where entry in (73163);
 update creature_template set minlevel=99, maxlevel=99, health_mod=50 where entry in (72970);
 update creature_template set health_mod=health_mod * 10 where entry in (72762, 72844, 73718, 72841); 
+
+
+/*Ajustando xp for level*/
+update player_xp_for_level set xp_for_next_level=9670000 where lvl=85;
+update player_xp_for_level set xp_for_next_level=10050000 where lvl=86;
+update player_xp_for_level set xp_for_next_level=10050000 where lvl=87;
+update player_xp_for_level set xp_for_next_level=12650000 where lvl=88;
+update player_xp_for_level set xp_for_next_level=12650000 where lvl=89;
+update player_xp_for_level set xp_for_next_level=15250000 where lvl=80;
+update player_xp_for_level set xp_for_next_level=15250000 where lvl=90;
+update player_xp_for_level set xp_for_next_level=18250000 where lvl>90;
