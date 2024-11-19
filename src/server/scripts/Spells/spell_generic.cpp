@@ -4069,7 +4069,7 @@ class spell_gen_ancient_knowledge : public AuraScript
     void CalculateAmount(AuraEffect const* /*aurEff*/, float& amount, bool& /*canBeRecalculated*/)
     {
         if (Player* player = GetAura()->GetOwner()->ToPlayer())
-            if (player->getLevel() > 84)
+            if (player->getLevel() > 100)
                 amount = 0;
     }
 
