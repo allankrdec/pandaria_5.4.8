@@ -8,7 +8,7 @@ update creature_loot_template set chanceorquestchance=100 where entry=72057 and 
 
 delete from item_loot_template where entry=104273 and item in(select item from creature_loot_template where entry=72057);
 insert into item_loot_template(entry, item, ChanceOrQuestChance, lootmode, groupid, mincountorref, maxcount)
-select 104273 as entry, item, 10 as ChanceOrQuestChance, lootmode, groupid, mincountorref, maxcount from creature_loot_template where entry=72057;
+select 104273 as entry, item, 12 as ChanceOrQuestChance, lootmode, groupid, mincountorref, maxcount from creature_loot_template where entry=72057;
 
 
 /*Ajustando creatures da ilha perene*/
