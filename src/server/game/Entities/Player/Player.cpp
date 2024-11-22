@@ -177,15 +177,20 @@ PlayerTaxi::PlayerTaxi()
 void PlayerTaxi::InitTaxiNodesForLevel(uint32 race, uint32 chrClass, uint8 level)
 {
     // class specific initial known nodes
-    switch (chrClass)
-    {
-        case CLASS_DEATH_KNIGHT:
-        {
-            for (uint8 i = 0; i < TaxiMaskSize; ++i)
-                m_taximask[i] |= sOldContinentsNodesMask[i];
-            break;
-        }
-    }
+    
+    // switch (chrClass)
+    // {
+    //     case CLASS_DEATH_KNIGHT:
+    //     {
+    //         for (uint8 i = 0; i < TaxiMaskSize; ++i)
+    //             m_taximask[i] |= sOldContinentsNodesMask[i];
+    //         break;
+    //     }
+    // }
+
+    //libera taxi para todos os chars.
+    for (uint8 i = 0; i < TaxiMaskSize; ++i)
+      m_taximask[i] |= sOldContinentsNodesMask[i];
 
     // https://wow.gamepedia.com/Flight_path: Patch 4.0.3a (2010-11-23): All characters now know the flight paths to their faction's capital cities, starting zone hubs, and Dalaran.
     switch (Player::TeamForRace(race))
