@@ -9,3 +9,9 @@ delete from personal_loot_item where entry=72057;
 insert personal_loot_item (entry, item) values(72057, 104273);
 update creature_loot_template set chanceorquestchance=0 where item=104273;
 update bonus_loot_template set entry=7205799 where entry=72057;
+
+/*Ajustando loot do garrosh*/
+update creature_loot_template set ChanceorQuestChance = 7.5 where entry = 71865 and ChanceorQuestChance = 3.5;
+update creature_loot_template set ChanceorQuestChance = 14.5 where entry = 71865 and ChanceorQuestChance = 7;
+update creature_loot_template set ChanceorQuestChance = 18 where entry = 71865 and ChanceorQuestChance = 9;
+update creature_loot_template set ChanceorQuestChance = 22 where entry = 71865 and ChanceorQuestChance = 11;
