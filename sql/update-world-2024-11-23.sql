@@ -15,3 +15,4 @@ update creature_loot_template set ChanceorQuestChance = 7.5 where entry = 71865 
 update creature_loot_template set ChanceorQuestChance = 14.5 where entry = 71865 and ChanceorQuestChance = 7;
 update creature_loot_template set ChanceorQuestChance = 18 where entry = 71865 and ChanceorQuestChance = 9;
 update creature_loot_template set ChanceorQuestChance = 22 where entry = 71865 and ChanceorQuestChance = 11;
+delete from item_loot_template where entry=104273 and item=104273;
