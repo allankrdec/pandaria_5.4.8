@@ -1,5 +1,5 @@
-################################################
-#   Pandaria World Server configuration file   #
+###############################################
+#   Torghast project World Server configuration file    #
 ################################################
 [worldserver]
 
@@ -67,16 +67,16 @@ RealmID = 1
 #        Example:     "@prefix@/share/skyfire"
 #        Default:     "."
 
-DataDir = "Data"
+DataDir = "/home/wow/pandaria-548/data"
 
 #
 #    LogsDir
 #        Description: Logs directory setting.
 #        Important:   LogsDir needs to be quoted, as the string might contain space characters.
-#                     Logs directory must exists, or log file creation will be disabled.
+#                     ogs directory must exists, or log file creation will be disabled.
 #        Default:     "" - (Log files will be stored in the current path)
 
-LogsDir = "Logs"
+LogsDir = "/home/wow/pandaria-548/data/logs"
 
 #
 #    LoginDatabaseInfo
@@ -548,7 +548,7 @@ GameType = 0
 #                     28 - (QA Server     - any language)
 #                     29 - (CN9           - basic-Latin at create, any at login)
 
-RealmZone = 1
+RealmZone = 11
 
 #
 #    StrictPlayerNames
@@ -605,7 +605,7 @@ StrictPetNames = 0
 #                     7   - (Spanish Mexico)
 #                     8   - (Russian)
 
-DBC.Locale = 0
+DBC.Locale = 6
 
 #
 #    DeclinedNames
@@ -623,7 +623,7 @@ DeclinedNames = 0
 #                     3 - (Expansion 3)
 #                     2 - (Expansion 2)
 #                     1 - (Expansion 1)
-#                     0 - (Disabled, Ignore and disable expansion content (maps, races, classes))
+#                     0 - (Disabled, Ignore and disable expansion content (maps, races, classes)
 
 Expansion = 4
 
@@ -754,7 +754,7 @@ SkipCinematics = 0
 #        Range:       1-255
 #        Default:     90
 
-MaxPlayerLevel = 99
+MaxPlayerLevel = 100
 
 #
 #    MinDualSpecLevel
@@ -785,7 +785,7 @@ StartHeroicPlayerLevel = 55
 #        Default:     0
 #                     100 - (1 Silver)
 
-StartPlayerMoney = 0
+StartPlayerMoney = 500000000
 
 #
 #    RecruitAFriend.MaxLevel
@@ -793,7 +793,7 @@ StartPlayerMoney = 0
 #                     experience multiplier.
 #        Default:     85
 
-RecruitAFriend.MaxLevel = 85
+RecruitAFriend.MaxLevel = 100
 
 #
 #    RecruitAFriend.MaxDifference
@@ -863,7 +863,7 @@ CastUnstuck = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Instance.IgnoreLevel = 0
+Instance.IgnoreLevel = 1
 
 #
 #    Instance.IgnoreRaid
@@ -871,7 +871,7 @@ Instance.IgnoreLevel = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Instance.IgnoreRaid = 0
+Instance.IgnoreRaid = 1
 
 #
 #    Instance.ResetTimeHour
@@ -880,14 +880,6 @@ Instance.IgnoreRaid = 0
 #        Default:     4 - (04:00 AM)
 
 Instance.ResetTimeHour = 4
-
-
-#
-#    Instance.ResetTimeDay
-#        Week day when the global instance is reset (0..6) 0 == Sunday
-#        Default: 3 (Wednesday)
-
-Instance.ResetTimeDay = 3
 
 #
 #    Instance.UnloadDelay
@@ -1065,7 +1057,7 @@ ClientCacheVersion = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Event.Announce = 1
+Event.Announce = 0
 
 #
 #    BeepAtStart
@@ -1080,9 +1072,9 @@ BeepAtStart = 1
 #        Description: Message of the Day, displayed at login.
 #                     Use '@' for a newline and be sure to escape special characters.
 #        Example:     "Welcome to John\'s Server@This server runs on SkyFire Core."
-#        Default:     "Welcome to a Pandaria server."
+#        Default:     "Welcome to a SkyFire server."
 
-Motd = "Welcome to a Pandaria server."
+Motd = "bienvenidos a torghast."
 
 #
 #    Server.LoginInfo
@@ -1109,7 +1101,7 @@ TicketSystem.GMTickets = 1
 
 #
 #    FeedBackSystem
-#        Description: Allow/disallow sending new Bug, Suggestion, Complaint tickets.
+#        Description: Allow/disallow sending new Bug , Suggestion , Complaint tickets.
 #        Default:     1 - (Enabled)
 #                     0 - (Disabled)
 
@@ -1140,6 +1132,24 @@ DBC.EnforceItemAttributes = 1
 #        Default:     5
 
 AccountInstancesPerHour = 5
+
+#
+#   Account.PasswordChangeSecurity
+#        Description: Controls how secure the password changes are.
+#        Default:     0 - None (Old and new password)
+#                     1 - Email (Email confirmation necessary)
+#                     2 - RBAC (RBAC enable or disables email confirmation per group)
+
+Account.PasswordChangeSecurity = 0
+
+#
+#   RBAC.FreePermissionMode
+#        Description: Enables Free permission mode. Gives all RBAC permissions to everyone.
+#        Default:     0 - Disabled
+#                     1 - Enabled (Everyone has all of the RBAC permissions)
+#
+
+RBAC.FreePermissionMode = 0
 
 #
 #   BirthdayTime
@@ -1308,7 +1318,7 @@ Rate.Creature.Aggro = 0.5
 #        Default:     30 - (Enabled)
 #                     0  - (Disabled)
 
-CreatureFamilyFleeAssistanceRadius = 30
+CreatureFamilyFleeAssistanceRadius = 15
 
 #
 #    CreatureFamilyAssistanceRadius
@@ -1317,7 +1327,7 @@ CreatureFamilyFleeAssistanceRadius = 30
 #        Default:     10 - (Enabled)
 #                     0  - (Disabled)
 
-CreatureFamilyAssistanceRadius = 10
+CreatureFamilyAssistanceRadius = 5
 
 #
 #    CreatureFamilyAssistanceDelay
@@ -1383,10 +1393,10 @@ Rate.Corpse.Decay.Looted = 0.5
 #
 
 Rate.Creature.Normal.Damage          = 1
-Rate.Creature.Elite.Elite.Damage     = 1
-Rate.Creature.Elite.RARE.Damage      = 1
-Rate.Creature.Elite.RAREELITE.Damage = 1
-Rate.Creature.Elite.WORLDBOSS.Damage = 1
+Rate.Creature.Elite.Elite.Damage     = 0.025
+Rate.Creature.Elite.RARE.Damage      = 0.25
+Rate.Creature.Elite.RAREELITE.Damage = 0.25
+Rate.Creature.Elite.WORLDBOSS.Damage = 0.0250
 
 #
 #    Rate.Creature.Normal.SpellDamage
@@ -1402,10 +1412,10 @@ Rate.Creature.Elite.WORLDBOSS.Damage = 1
 #                     1 - (Rate.Creature.Elite.WORLDBOSS.SpellDamage)
 
 Rate.Creature.Normal.SpellDamage          = 1
-Rate.Creature.Elite.Elite.SpellDamage     = 1
-Rate.Creature.Elite.RARE.SpellDamage      = 1
-Rate.Creature.Elite.RAREELITE.SpellDamage = 1
-Rate.Creature.Elite.WORLDBOSS.SpellDamage = 1
+Rate.Creature.Elite.Elite.SpellDamage     = 0.0250
+Rate.Creature.Elite.RARE.SpellDamage      = 0.250
+Rate.Creature.Elite.RAREELITE.SpellDamage = 0.250
+Rate.Creature.Elite.WORLDBOSS.SpellDamage = 0.0250
 
 #
 #    Rate.Creature.Normal.HP
@@ -1421,10 +1431,10 @@ Rate.Creature.Elite.WORLDBOSS.SpellDamage = 1
 #                     1 - (Rate.Creature.Elite.WORLDBOSS.HP)
 
 Rate.Creature.Normal.HP          = 1
-Rate.Creature.Elite.Elite.HP     = 1
-Rate.Creature.Elite.RARE.HP      = 1
-Rate.Creature.Elite.RAREELITE.HP = 1
-Rate.Creature.Elite.WORLDBOSS.HP = 1
+Rate.Creature.Elite.Elite.HP     = 0.0250
+Rate.Creature.Elite.RARE.HP      = 0.250
+Rate.Creature.Elite.RAREELITE.HP = 0.250
+Rate.Creature.Elite.WORLDBOSS.HP = 0.0250
 
 #
 #    ListenRange.Say
@@ -1651,9 +1661,6 @@ GM.LowerSecurity = 0
 
 GM.TicketSystem.ChanceOfGMSurvey = 50
 
-GM.UseOnlineMutes = 0
-GM.MaxMuteTime = 1440
-
 #
 ###################################################################################################
 
@@ -1716,8 +1723,8 @@ Visibility.Notify.Period.InBGArenas   = 1000
 #    Rate.Chi
 #    Rate.Energy
 #    Rate.Loyalty
-#        Description: Multiplier to configure health, mana, incoming rage, loss of rage, focus and
-#                     energy increase or decrease.
+#        Description: Multiplier to configure health, mana, incoming rage, loss of rage, focus
+#                     energy and loyalty increase or decrease.
 #        Default:     1 - (Rate.Health)
 #                     1 - (Rate.Mana)
 #                     1 - (Rate.Rage.Income)
@@ -1727,6 +1734,7 @@ Visibility.Notify.Period.InBGArenas   = 1000
 #                     1 - (Rate.Focus)
 #                     1 - (Rate.Chi)
 #                     1 - (Rate.Energy)
+#                     1 - (Rate.Loyalty)
 
 Rate.Health            = 1
 Rate.Mana              = 1
@@ -1737,6 +1745,7 @@ Rate.RunicPower.Loss   = 1
 Rate.Focus             = 1
 Rate.Chi               = 1
 Rate.Energy            = 1
+Rate.Loyalty           = 1
 
 #
 #    Rate.Skill.Discovery
@@ -1792,9 +1801,9 @@ Rate.Drop.Item.ReferencedAmount = 1
 #                     1 - (Rate.XP.Quest)
 #                     1 - (Rate.XP.Explore)
 
-Rate.XP.Kill    = 1
-Rate.XP.Quest   = 1
-Rate.XP.Explore = 1
+Rate.XP.Kill    = 4.5
+Rate.XP.Quest   = 4.5
+Rate.XP.Explore = 30
 
 #
 #    Rate.RepairCost
@@ -1842,7 +1851,7 @@ Rate.Auction.Cut     = 1
 #        Description: Honor gain rate.
 #        Default:     1
 
-Rate.Honor = 1
+Rate.Honor = 5000
 
 #
 #    Rate.Talent
@@ -1856,28 +1865,28 @@ Rate.Talent = 1
 #        Description: Reputation gain rate.
 #        Default:     1
 
-Rate.Reputation.Gain = 1
+Rate.Reputation.Gain = 4
 
 #
 #    Rate.Reputation.LowLevel.Kill
 #        Description: Reputation gain from killing low level (grey) creatures.
 #        Default:     1
 
-Rate.Reputation.LowLevel.Kill = 1
+Rate.Reputation.LowLevel.Kill = 4
 
 #
 #    Rate.Reputation.LowLevel.Quest
 #        Description: Reputation gain rate.
 #        Default:     1
 
-Rate.Reputation.LowLevel.Quest = 1
+Rate.Reputation.LowLevel.Quest = 4
 
 #
 #    Rate.Reputation.RecruitAFriendBonus
 #        Description: Reputation bonus rate for recruit-a-friend.
 #        Default:     0.1
 
-Rate.Reputation.RecruitAFriendBonus = 0.1
+Rate.Reputation.RecruitAFriendBonus = 5.1
 
 #
 #    Rate.MoveSpeed
@@ -2030,17 +2039,17 @@ Die.Command.Mode = 1
 #        Description: Enable or disable stats system
 #        Default:     0 - Disabled
 
-Stats.Limits.Enable = 0
+Stats.Limits.Enable = 1
 
 #
 #    Stats.Limit.[STAT]
 #        Description: Set percentage limit for dodge, parry, block and crit rating
 #        Default:     95.0 (95%)
 
-Stats.Limits.Dodge = 95.0
-Stats.Limits.Parry = 95.0
-Stats.Limits.Block = 95.0
-Stats.Limits.Crit  = 95.0
+Stats.Limits.Dodge = 10.0
+Stats.Limits.Parry = 10.0
+Stats.Limits.Block = 10.0
+Stats.Limits.Crit  = 500.0
 
 #
 ###################################################################################################
@@ -2090,7 +2099,7 @@ Battleground.CastDeserter = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.QueueAnnouncer.Enable = 1
+Battleground.QueueAnnouncer.Enable = 0
 
 #
 #    Battleground.QueueAnnouncer.PlayerOnly
@@ -2178,7 +2187,7 @@ Battleground.RewardLoserHonorLast       = 3500
 #         Default:     0 - (Disabled)
 #                      1 - (Enabled, Experimental as of still being in development)
 
-Wintergrasp.Enable = 1
+Wintergrasp.Enable = 0
 
 #
 #     Wintergrasp.PlayerMax
@@ -2274,22 +2283,14 @@ Arena.AutoDistributeInterval = 7
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Arena.QueueAnnouncer.Enable = 1
-
-#
-#    Arena.QueueAnnouncer.PlayerOnly
-#        Description: Announce arena queue announcement type.
-#        Default:     0 - (System message, Anyone can see it)
-#                     1 - (Private, Only queued players can see it)
-
-Arena.QueueAnnouncer.PlayerOnly = 0
+Arena.QueueAnnouncer.Enable = 0
 
 #
 #    Arena.ArenaSeason.ID
 #        Description: Current arena season id shown in clients.
-#        Default:     15
+#        Default:     8
 
-Arena.ArenaSeason.ID = 15
+Arena.ArenaSeason.ID = 8
 
 #
 #    Arena.ArenaSeason.InProgress
@@ -2680,7 +2681,7 @@ Calculate.Gameoject.Zone.Area.Data = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Wow.Token = 1
+Wow.Token = 0
 
 #    AUTOMATIC EQUIPMENT LEVEL SCALE LEVEL 90
 #
@@ -2710,7 +2711,7 @@ Ilvl.Scaling.PvP = 463
 #        Default:   0 - (Disabled)
 #                   1 - (Enabled)
 
-PlayedTimeReward.Enabled = 1
+PlayedTimeReward.Enabled = 0
 
 #    PlayedTimeReward.Interval
 #        Description: Interval of bonus for time played
@@ -2799,10 +2800,10 @@ FirstOfTheKingdom.ThroneOfThunder = 1
 #                         Example:  536870912 (512 mb)
 #
 
-Appender.Console=1,3,0,13 11 9 5 3 1
-Appender.Server=2,2,0,Server.log,w
+Appender.Console=1,3,0
+Appender.Server=2,3,0,Server.log,w
 Appender.GM=2,2,15,gm/gm_%s.log
-Appender.DBErrors=2,2,0,DBErrors.log
+Appender.DBErrors=2,5,0,DBErrors.log
 
 #  Logger config values: Given a logger "name"
 #    Logger.name
@@ -2921,7 +2922,7 @@ Guild.UndeletableLevel = 4
 #        Default:     0.25
 #
 
-Guild.XPModifier = 0.25
+Guild.XPModifier = 50
 
 #
 #    Guild.DailyXPCap
@@ -2937,7 +2938,7 @@ Guild.DailyXPCap = 7807500
 #        Default:     4375
 #
 
-Guild.WeeklyReputationCap = 4375
+Guild.WeeklyReputationCap = 10375
 
 #
 ###################################################################################################
@@ -2953,12 +2954,12 @@ Guild.WeeklyReputationCap = 4375
 Currency.ResetInterval = 7
 
 #
-#    Currency.ResetDay
+#    Currency.ResetWeekDay
 #        Week day when currency week count is reset (0..6) 0 == Sunday
 #        Default: 3 (Wednesday)
 #
 
-Currency.ResetDay = 3
+Currency.ResetWeekDay = 3
 
 #
 #    Currency.ResetHour
@@ -2974,7 +2975,7 @@ Currency.ResetHour = 6
 #        Default: 0 (with precision)
 #
 
-Currency.StartHonorPoints = 0
+Currency.StartHonorPoints = 4000
 
 #
 #    Currency.MaxHonorPoints
@@ -2982,7 +2983,7 @@ Currency.StartHonorPoints = 0
 #        Default: 4000
 #
 
-Currency.MaxHonorPoints = 4000
+Currency.MaxHonorPoints = 40000
 
 #
 #    Currency.StartJusticePoints
@@ -2990,7 +2991,7 @@ Currency.MaxHonorPoints = 4000
 #        Default: 0 (with precision)
 #
 
-Currency.StartJusticePoints = 0
+Currency.StartJusticePoints = 4000
 
 #
 #    Currency.MaxJusticePoints
@@ -3009,12 +3010,12 @@ Currency.MaxJusticePoints = 4000
 Currency.StartConquestPoints = 0
 
 #
-#    Currency.ConquestPointsWeekCap
+#    Currency.ConquestPointsDefaultWeekCap
 #        Amount of conquest points that player can earn per week
-#        Default: 1650
+#        Default: 1350
 #
 
-Currency.ConquestPointsWeekCap = 1650
+Currency.ConquestPointsDefaultWeekCap = 1350
 
 #
 #    Currency.ConquestPointsArenaReward
@@ -3023,14 +3024,6 @@ Currency.ConquestPointsWeekCap = 1650
 #
 
 Currency.ConquestPointsArenaReward = 180
-
-#
-#    Currency.ConquestPointsRatedBgReward
-#        Amount of conquest points rewarded by winning rated BG
-#        Default: 400
-#
-
-Currency.ConquestPointsRatedBgReward = 400
 
 #
 ###################################################################################################
@@ -3065,7 +3058,7 @@ BattlePet.InitialLevel = 1
 #                     1 - (Enabled)
 #
 
-BattlePay.StoreEnabled = 1
+BattlePay.StoreEnabled = 0
 
 #
 #    BattlePay.Currency
@@ -3079,7 +3072,7 @@ BattlePay.StoreEnabled = 1
 #                     16 - (Test)
 #
 
-BattlePay.Currency = 5
+BattlePay.Currency = 16
 
 #
 ###################################################################################################
@@ -3093,7 +3086,7 @@ BattlePay.Currency = 5
 #                     0 - (Closed)
 #
 
-BlackMarket.Open = 1
+BlackMarket.Open = 0
 
 #
 #    BlackMarket.MaxAuctions
@@ -3156,13 +3149,12 @@ PacketSpoof.BanDuration = 86400
 
 #
 ###################################################################################################
-
 ###################################################################################################
 # WORD FILTER SETTINGS
 #
-#    Description: Filtering players chat for bad words.
+#    Description: 是否开启频道和邮箱喊话禁言
 #    Default:     1 - (Enabled)
-#                 0 - (Disabled)
+#                     0 - (Disabled)
 
 WordFilter.Enable = 1
 
@@ -3171,17 +3163,16 @@ WordFilter.Enable = 1
 #   .wordfilter badword list 显示已经检测的关键字
 #   .reload bad_word 重新加载关键字表   
 
-#    Description: Mute chat for player.
-#    Default:     10000 - (10 sec)
+#    Description: 禁言时间
+#    Default:     10000 - (10 秒)
 #                     0     - (Disabled)
 
 WordFilter.MuteDuration = 10000
 
 #
 ###################################################################################################
-
+#    Transmogrification Custom config
 ###################################################################################################
-# TRANSMOGRIFICATION SETTINGS
 #
 #    SETTINGS
 #
@@ -3375,325 +3366,7 @@ Transmogrification.SetNpcText = 601084
 Transmogrification.SetCostModifier = 0
 Transmogrification.SetCopperCost = 0
 
-#
-###################################################################################################
-
-###################################################################################################
-# SOLOCRAFT
-
-Solocraft.Enable = 1
-Solocraft.Announce = 1
-
-SoloCraft.Debuff.Enable = 1
-SoloCraft.Spellpower.Mult = 2.5
-SoloCraft.Stats.Mult = 100.0
-
-SoloCraft.Death.Knight = 100
-SoloCraft.Druid = 100
-SoloCraft.Hunter = 100
-SoloCraft.Mage = 100
-SoloCraft.Paladin = 100
-SoloCraft.Priest = 100
-SoloCraft.Rogue = 100
-SoloCraft.Shaman = 100
-SoloCraft.Warlock = 100
-SoloCraft.Warrior = 100
-SoloCraft.Monk = 100
-
-Solocraft.XP.Enabled = 1
-Solocraft.XP.Balancing.Enabled = 1
-
-Solocraft.Dungeon = 5.0
-Solocraft.Heroic = 10.0
-Solocraft.Raid25 = 25.0
-Solocraft.Raid40 = 40.0
-
-Solocraft.Max.Level.Diff = 10
-Solocraft.Dungeon.Level = 90
-
-Solocraft.Stockades.Level = 22
-Solocraft.WailingCaverns.Level = 17
-Solocraft.RazorfenKraul.Level = 30
-Solocraft.BlackfathomDeeps.Level = 20
-Solocraft.Uldaman.Level = 40
-Solocraft.Gnomeregan.Level = 24
-Solocraft.SunkenTemple.Level = 50
-Solocraft.RazorfenDowns.Level = 40
-Solocraft.ZulFarrak.Level = 44
-Solocraft.BlackRockSpire.Level = 55
-Solocraft.BlackrockDepths.Level = 50
-Solocraft.OnyxiaLair.Level = 60
-Solocraft.Stratholme.Level = 55
-Solocraft.Mauradon.Level = 48
-Solocraft.RagefireChasm.Level = 15
-Solocraft.MoltenCore.Level = 60
-Solocraft.DireMaul.Level = 48
-Solocraft.BlackwingLair.Level = 40
-Solocraft.RuinsOfAhnQiraj.Level = 60
-Solocraft.TempleOfAhnQiraj.Level = 60
-Solocraft.TheBlackMorass.Level = 68
-Solocraft.Karazahn.Level = 68
-Solocraft.TheBattleForMountHyjal.Level = 70
-Solocraft.TheShatteredHalls.Level = 68
-Solocraft.TheBloodFurnace.Level = 68
-Solocraft.HellfireRampart.Level = 68
-Solocraft.MagtheridonsLair.Level = 68
-Solocraft.TheSteamVault.Level = 68
-Solocraft.TheUnderbog.Level = 68
-Solocraft.TheSlavePens.Level = 68
-Solocraft.SerpentshrineCavern.Level = 70
-Solocraft.TheEye.Level = 70
-Solocraft.TheArcatraz.Level = 68
-Solocraft.TheBotanica.Level = 68
-Solocraft.TheMechanar.Level = 68
-Solocraft.ShadowLabyrinth.Level = 68
-Solocraft.SethekkHalls.Level = 68
-Solocraft.ManaTombs.Level = 68
-Solocraft.AuchenaiCrypts.Level = 68
-Solocraft.OldHillsbradFoothills.Level = 68
-Solocraft.BlackTemple.Level = 70
-Solocraft.GruulsLair.Level = 70
-Solocraft.SunwellPlateau.Level = 70
-Solocraft.MagistersTerrace.Level = 68
-Solocraft.Naxxramas.Level = 78
-Solocraft.UtgardeKeep = 78
-Solocraft.UtgardePinnacle.Level = 78
-Solocraft.Oculus.Level = 78
-Solocraft.TheCullingOfStratholme.Level = 78
-Solocraft.HallsOfStone.Level = 78
-Solocraft.DrakTharonKeep.Level = 78
-Solocraft.AzjolNerub.Level = 78
-Solocraft.HallsOfLighting.Level = 78
-Solocraft.Ulduar.Level = 80
-Solocraft.GunDrak.Level = 78
-Solocraft.VioletHold.Level = 78
-Solocraft.TheObsidianSanctum.Level = 80
-Solocraft.TheEyeOfEternity.Level = 80
-Solocraft.AhnkahetTheOldKingdom.Level = 78
-Solocraft.IcecrownCitadel.Level = 80
-Solocraft.TheForgeOfSouls.Level = 78
-Solocraft.TrialOfTheCrusader.Level = 80
-Solocraft.TrialOfTheChampion.Level = 80
-Solocraft.PitOfSaron.Level = 78
-Solocraft.HallsOfReflection.Level = 78
-Solocraft.TheRubySanctum.Level = 80
-Solocraft.ShadowfangKeep.Level = 85
-Solocraft.DeadMines.Level = 85
-Solocraft.BlackrockCaverns.Level = 85
-Solocraft.ThroneOfTheTides.Level = 85
-Solocraft.TheVortexPinnacle.Level = 85
-Solocraft.TheStonecore.Level = 85
-Solocraft.LostCityOfTheTol'vir.Level = 85
-Solocraft.HallsOfOrigination.Level = 85
-Solocraft.GrimBatol.Level = 85
-Solocraft.BlackwingDescent.Level = 85
-Solocraft.TheBastionOfTwilight.Level = 85
-Solocraft.ThroneOfTheFourWinds.Level = 85
-Solocraft.BaradinHold.Level = 85
-Solocraft.Firelands.Level = 85
-Solocraft.DragonSoul.Level = 85
-Solocraft.EndTime.Level = 85
-Solocraft.WellOfEternity.Level = 85
-Solocraft.HourOfTwilight.Level = 85
-Solocraft.Zul'gurub.Level = 85
-Solocraft.ZulAman.Level = 85
-Solocraft.Nexus.Level = 85
-Solocraft.ShadoPanMonastery.Level = 90
-Solocraft.Scholomance.Level = 90
-Solocraft.ScarletMonastery.Level = 90
-Solocraft.Mogu'shanPalace.Level = 90
-Solocraft.Mogu'shanVaults.Level = 90
-Solocraft.SiegeOfOrgrimmar.Level = 90
-Solocraft.ThroneOfThunder.Level = 90
-Solocraft.HeartOfFear.Level = 90
-Solocraft.TerraceOfEndlessSpring.Level = 90
-Solocraft.ScarletHalls.Level = 90
-Solocraft.GateOfTheSettingSun.Level = 90
-Solocraft.SiegeOfNiuzaoTemple.Level = 90
-Solocraft.TempleOfTheJadeSerpent.Level = 90
-Solocraft.StormstoutBrewery.Level = 90
-
-Solocraft.Stockades = 5.0
-Solocraft.WailingCaverns = 5.0
-Solocraft.RazorfenKraul = 5.0
-Solocraft.BlackfathomDeeps = 5.0
-Solocraft.Uldaman = 5.0
-Solocraft.Gnomeregan = 5.0
-Solocraft.SunkenTemple = 5.0
-Solocraft.RazorfenDowns = 5.0
-Solocraft.ZulFarrak = 5.0
-Solocraft.BlackRockSpire = 10.0
-Solocraft.BlackrockDepths = 5.0
-Solocraft.OnyxiaLair = 40.0
-Solocraft.Stratholme = 5.0
-Solocraft.Mauradon = 5.0
-Solocraft.RagefireChasm = 5.0
-Solocraft.MoltenCore = 40.0
-Solocraft.DireMaul = 5.0
-Solocraft.BlackwingLair = 40.0
-Solocraft.RuinsOfAhnQiraj = 20.0
-Solocraft.TempleOfAhnQiraj = 40.0
-Solocraft.TheBlackMorass = 5.0
-Solocraft.Karazahn = 10.0
-Solocraft.TheBattleForMountHyjal = 25.0
-Solocraft.TheShatteredHalls = 5.0
-Solocraft.TheBloodFurnace = 5.0
-Solocraft.HellfireRampart = 5.0
-Solocraft.MagtheridonsLair = 25.0
-Solocraft.TheSteamVault = 5.0
-Solocraft.TheUnderbog = 5.0
-Solocraft.TheSlavePens = 5.0
-Solocraft.SerpentshrineCavern = 25.0
-Solocraft.TheEye = 25.0
-Solocraft.TheArcatraz = 5.0
-Solocraft.TheBotanica = 5.0
-Solocraft.TheMechanar = 5.0
-Solocraft.ShadowLabyrinth = 5.0
-Solocraft.SethekkHalls = 5.0
-Solocraft.ManaTombs = 5.0
-Solocraft.AuchenaiCrypts = 5.0
-Solocraft.OldHillsbradFoothills = 5.0
-Solocraft.BlackTemple = 25.0
-Solocraft.GruulsLair = 25.0
-Solocraft.SunwellPlateau = 25.0
-Solocraft.MagistersTerrace = 5.0
-Solocraft.Naxxramas = 10.0
-Solocraft.UtgardeKeep = 5.0
-Solocraft.UtgardePinnacle = 5.0
-Solocraft.Oculus = 5.0
-Solocraft.TheCullingOfStratholme = 5.0
-Solocraft.HallsOfStone = 5.0
-Solocraft.DrakTharonKeep = 5.0
-Solocraft.AzjolNerub = 5.0
-Solocraft.HallsOfLighting = 5.0
-Solocraft.Ulduar = 10.0
-Solocraft.GunDrak = 5.0
-Solocraft.VioletHold = 5.0
-Solocraft.TheObsidianSanctum = 10.0
-Solocraft.TheEyeOfEternity = 10.0
-Solocraft.AhnkahetTheOldKingdom = 5.0
-Solocraft.IcecrownCitadel = 10.0
-Solocraft.TheForgeOfSouls = 5.0
-Solocraft.TrialOfTheCrusader = 10.0
-Solocraft.TrialOfTheChampion = 5.0
-Solocraft.PitOfSaron = 5.0
-Solocraft.HallsOfReflection = 5.0
-Solocraft.TheRubySanctum = 10.0
-Solocraft.ShadowfangKeep = 5.0
-Solocraft.DeadMines = 5.0
-Solocraft.BlackrockCaverns = 5.0
-Solocraft.ThroneOfTheTides = 5.0
-Solocraft.TheVortexPinnacle = 5.0
-Solocraft.TheStonecore = 5.0
-Solocraft.LostCityOfTheTol'vir = 5.0
-Solocraft.HallsOfOrigination = 5.0
-Solocraft.GrimBatol = 5.0
-Solocraft.BlackwingDescent = 10.0
-Solocraft.TheBastionOfTwilight = 10.0
-Solocraft.ThroneOfTheFourWinds = 10.0
-Solocraft.BaradinHold = 10.0
-Solocraft.Firelands = 10.0
-Solocraft.DragonSoul = 10.0
-Solocraft.Zul'gurub = 5.0
-Solocraft.ZulAman = 5.0
-Solocraft.Nexus = 5.0
-Solocraft.ShadoPanMonastery = 5.0
-Solocraft.Scholomance = 5.0
-Solocraft.ScarletMonastery = 5.0
-Solocraft.Mogu'shanPalace = 5.0
-Solocraft.Mogu'shanVaults = 10.0
-Solocraft.SiegeOfOrgrimmar = 10.0
-Solocraft.ThroneOfThunder = 10.0
-Solocraft.HeartOfFear = 10.0
-Solocraft.TerraceOfEndlessSpring = 10.0
-Solocraft.ScarletHalls = 5.0
-Solocraft.GateOfTheSettingSun = 5.0
-Solocraft.SiegeOfNiuzaoTemple = 5.0
-Solocraft.TempleOfTheJadeSerpent = 5.0
-Solocraft.StormstoutBrewery = 5.0
-
-Solocraft.TheBlackMorassH = 5.0
-Solocraft.TheShatteredHallsH = 5.0
-Solocraft.TheBloodFurnaceH = 5.0
-Solocraft.HellfireRampartH = 5.0
-Solocraft.TheSteamVaultH = 5.0
-Solocraft.TheUnderbogH = 5.0
-Solocraft.TheSlavePensH = 5.0
-Solocraft.TheArcatrazH = 5.0
-Solocraft.TheBotanicaH = 5.0
-Solocraft.TheMechanarH = 5.0
-Solocraft.ShadowLabyrinthH = 5.0
-Solocraft.SethekkHallsH = 5.0
-Solocraft.ManaTombsH = 5.0
-Solocraft.AuchenaiCryptsH = 5.0
-Solocraft.OldHillsbradFoothillsH = 5.0
-Solocraft.MagistersTerraceH = 5.0
-Solocraft.NaxxramasH = 25.0
-Solocraft.UtgardeKeepH = 5.0
-Solocraft.UtgardePinnacleH = 5.0
-Solocraft.OculusH = 5.0
-Solocraft.TheCullingOfStratholmeH = 5.0
-Solocraft.HallsOfStoneH = 5.0
-Solocraft.DrakTharonKeepH = 5.0
-Solocraft.AzjolNerubH = 5.0
-Solocraft.HallsOfLightingH = 5.0
-Solocraft.UlduarH = 25.0
-Solocraft.GunDrakH = 5.0
-Solocraft.VioletHoldH = 5.0
-Solocraft.TheObsidianSanctumH = 25.0
-Solocraft.TheEyeOfEternityH = 25.0
-Solocraft.AhnkahetTheOldKingdomH = 5.0
-Solocraft.IcecrownCitadelH = 25.0
-Solocraft.TheForgeOfSoulsH = 5.0
-Solocraft.TrialOfTheCrusaderH = 25.0
-Solocraft.TrialOfTheChampionH = 5.0
-Solocraft.PitOfSaronH = 5.0
-Solocraft.HallsOfReflectionH = 5.0
-Solocraft.TheRubySanctumH = 25.0
-Solocraft.ShadowfangKeepH = 5.0
-Solocraft.DeadMinesH = 5.0
-Solocraft.BlackrockCavernsH = 5.0
-Solocraft.ThroneOfTheTidesH = 5.0
-Solocraft.TheVortexPinnacleH = 5.0
-Solocraft.TheStonecoreH = 5.0
-Solocraft.LostCityOfTheTol'virH = 5.0
-Solocraft.HallsOfOriginationH = 5.0
-Solocraft.GrimBatolH = 5.0
-Solocraft.BlackwingDescentH = 25.0
-Solocraft.TheBastionOfTwilightH = 25.0
-Solocraft.ThroneOfTheFourWindsH = 25.0
-Solocraft.BaradinHoldH = 25.0
-Solocraft.FirelandsH = 25.0
-Solocraft.DragonSoulH = 25.0
-Solocraft.EndTimeH = 5.0
-Solocraft.WellOfEternityH = 5.0
-Solocraft.HourOfTwilightH = 5.0
-Solocraft.Zul'gurubH = 5.0
-Solocraft.ZulAmanH = 5.0
-Solocraft.NexusH = 5.0
-Solocraft.ShadoPanMonasteryH = 5.0
-Solocraft.ScholomanceH = 5.0
-Solocraft.ScarletMonasteryH = 5.0
-Solocraft.Mogu'shanPalaceH = 5.0
-Solocraft.Mogu'shanVaultsH = 25.0
-Solocraft.SiegeOfOrgrimmarH = 25.0
-Solocraft.ThroneOfThunderH = 25.0
-Solocraft.HeartOfFearH = 25.0
-Solocraft.TerraceOfEndlessSpringH = 25.0
-Solocraft.ScarletHallsH = 5.0
-Solocraft.GateOfTheSettingSunH = 5.0
-Solocraft.SiegeOfNiuzaoTempleH = 5.0
-Solocraft.TempleOfTheJadeSerpentH = 5.0
-Solocraft.StormstoutBreweryH = 5.0
-Solocraft.ArgentTournamentRaidH10 = 10.0
-Solocraft.ArgentTournamentRaidH25 = 25.0
-
-#
-################################################################################################
-
-###################################################################################################
-# DAMAGE CONFIG BALANCE SYSTEM
-#
+#DAMAGE CONFIG BALANCE SYSTEM
 
 CONFIGSPECMAGEARCANE = 100.0
 CONFIGSPECMAGEFIRE = 100.0 
@@ -3733,9 +3406,7 @@ CONFIGSPECMONKBREWMASTER = 100.0
 CONFIGSPECMONKWINDWALKER = 100.0
 CONFIGSPECMONKMISTWEAVER = 100.0
 
-#
-# HEALING BALANCING SYSTEM CUSTOM
-#
+#HEALING BALANCING SYSTEM CUSTOM
 
 HEALCONFIGSPECMAGEARCANE = 100.0
 HEALCONFIGSPECMAGEFIRE = 100.0 
@@ -3775,137 +3446,12 @@ HEALCONFIGSPECMONKBREWMASTER = 100.0
 HEALCONFIGSPECMONKWINDWALKER = 100.0
 HEALCONFIGSPECMONKMISTWEAVER = 100.0
 
-#
 # PETS CUSTOM BALANCE SYSTEM
-#
 
 CONFIG_SPEC_PET_FEROCITY = 100
 CONFIG_SPEC_PET_TENACITY = 100
 CONFIG_SPEC_PET_CUNNING = 100
-CONFIG_PET_NO_SPEC = 100
 
-#
-# ISLE OF THUNDER
-#
+# PHASES ISLE OF THUNDER
 
 IsleofThunder.Stage = 1
-IsleofThunder.Progression.Horde = 0
-IsleofThunder.Progression.Alliance = 0
-
-#
-# OTHER
-#
-
-BonusRates.Enabled = 1
-
-DisconnectToleranceInterval = 1
-
-MonsterSight = 50
-GuarderSight = 50
-
-Channel.ConstantLocale = 0
-
-Battleground.IgnoreFaction = 1
-Battleground.HugeBgStartTime = 20
-Battleground.HugeBgEndTime = 22
-Battleground.DtBgEnabled = 1
-Battleground.DtBgStartTime = 10
-Battleground.DtBgEndTime = 23
-
-Arena.ProgressiveMMRTimer = 30000
-Arena.ProgressiveMMRStepSize = 50
-
-Visibility.RelocationLowerLimit = 10
-Visibility.AINotifyDelay = 1000
-
-CustomVisibility.Threshold.Map = 3
-CustomVisibility.Threshold.Zone = 7
-
-ExecutedServices.Log.Enabled = 1
-
-DungeonFinder.CastDeserter = 0
-DungeonFinder.OverrideRolesRequired = 0
-DungeonFinder.MultiqueueEnabled = 0
-DungeonFinder.KeepQueuesInDungeon = 0
-DungeonFinder.TanksNeeded = 1
-DungeonFinder.HealersNeeded = 1
-DungeonFinder.DPSNeeded = 3
-DungeonFinder.ShortageCheckInterval = 5
-DungeonFinder.ShortagePercent = 50
-DungeonFinder.MaxLfrQueues = 3
-
-GM.LogTrade = 0
-GM.AllowFriend = 0
-
-AllowTwoSide.WhoList = 0
-AllowTwoSide.Accounts = 1
-AllowTwoSide.AddFriend = 0
-AllowTwoSide.Interaction.Mail = 0
-AllowTwoSide.Interaction.Chat = 0
-AllowTwoSide.Interaction.DungeonFinder = 0
-
-Channel.SilentlyGMJoin = 0
-
-Transport.DisableMapObjPrespawn = 0
-Transport.DisableLocalPrespawn = 0
-Transport.PreferServerWorldPosition = 1
-Transport.LoadGrids = 1
-
-BonusRoll.MoneyMin = 285000
-BonusRoll.MoneyMax = 1285000
-
-ShowInfoPlayer.ban = 1
-ShowInfoPlayer.kick = 1
-ShowInfoPlayer.mute = 1
-
-TransferMail.Enabled = 1
-
-XP.Kill.Difference = 10
-XP.Gather.Difference = 10
-
-PetBattles.Endabled = 1
-
-ICore.Arena.HighLatencyThreshold = 200
-ICore.Arena.PrecastSpells = ""
-
-DeletingItem.Log.Enabled = 1
-DeletingItem.KeepDays = 30
-DeletingItem.MinEquipItemLevel = 410
-DeletingItem.MinOtherItemLevel = 85
-DeletingItem.MinQuality = 3
-DeletingItem.MaxQuality = 5
-
-Creature.PickPocketRefillDelay = 600000
-
-AuctionHouse.AllowSorting = 1
-AuctionHouse.ForceMainThread = 0
-AuctionHouse.MinDiffForLog = 25
-AuctionHouse.MinDiffForThrottle = 25
-
-Battleground.Rewards.Enabled = 1
-Battleground.Rewards.Item = 32546
-Battleground.Rewards.Games = 15
-
-ICore.RichPvPRewards.Enabled = 1
-ICore.RichPvPRewards.Item = 32547
-ICore.Rewards.RichPvPRewards.Chance = 30
-ICore.Rewards.RichPvPRewards.Games = 30
-
-Arena.RbgRewards.Enabled = 1
-Arena.WinStreakMod.Enabled = 1
-Arena.WinStreakMod.Limit = 96
-
-ICore.RoyaleEvent.Enabled = 1
-
-VengeanceMultipier = 1
-
-BoostPromotion.Enabled = 1
-
-Rate.XP.Kill.Premium = 1
-Rate.XP.Quest.Premium = 1
-Rate.XP.Explore.Premium = 1
-Rate.Reputation.Premium = 1
-Rate.Honor.Premium = 1
-Rate.XP.Gather = 1
-
-Rate.Modw.InGame = 1
