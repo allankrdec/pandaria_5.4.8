@@ -2445,8 +2445,10 @@ void World::Update(uint32 diff)
 
     /// Handle weekly quests reset time
     if (m_gameTime > m_NextWeeklyQuestReset)
+    {
+        ResetLootLockouts(); //resetando loots
         ResetWeeklyQuests();
-
+    }
     /// Handle monthly quests reset time
     if (m_gameTime > m_NextMonthlyQuestReset)
         ResetMonthlyQuests();
