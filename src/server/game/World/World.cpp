@@ -2440,13 +2440,13 @@ void World::Update(uint32 diff)
     if (m_gameTime > m_NextDailyQuestReset)
     {
         ResetDailyQuests();
+        ResetLootLockouts(); //resetando loots vai ser diario agora
         m_NextDailyQuestReset += DAY;
     }
 
     /// Handle weekly quests reset time
     if (m_gameTime > m_NextWeeklyQuestReset)
-    {
-        ResetLootLockouts(); //resetando loots
+    {        
         ResetWeeklyQuests();
     }
     /// Handle monthly quests reset time
@@ -2462,7 +2462,7 @@ void World::Update(uint32 diff)
     if (m_gameTime > m_nextCurrencyReset)
     {
         ResetCurrencyWeekCap();
-        ResetLootLockouts();
+        //ResetLootLockouts();
         sGuildMgr->ResetGuildChallenges();
     }
 
