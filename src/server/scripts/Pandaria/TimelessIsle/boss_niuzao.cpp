@@ -23,7 +23,7 @@
 
 #define BOSS_NIUZAO 0
 
-const float _chargePos[5][3] = 
+const float _chargePos[5][3] =
 {
     { -740.79f, -5019.06f, -6.277f },
     { -740.41f, -4962.37f, -6.277f },
@@ -87,7 +87,7 @@ class boss_niuzao : public CreatureScript
 
         struct boss_niuzaoAI : public ScriptedAI
         {
-            boss_niuzaoAI(Creature* creature) : ScriptedAI(creature), summons(me) 
+            boss_niuzaoAI(Creature* creature) : ScriptedAI(creature), summons(me)
             {
                 me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE); // prisma
             }
@@ -169,7 +169,7 @@ class boss_niuzao : public CreatureScript
                     me->RemoveAllAuras();
                     me->GetMotionMaster()->Clear();
                     me->CombatStop(true);
-                    me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                    me->SetHealth(391000/*me->GetMaxHealth()*/);
 
                     me->SetFacingTo(MIDDLE_FACING_ANGLE);
                     me->DeleteThreatList();
@@ -263,7 +263,7 @@ class boss_niuzao : public CreatureScript
                         case EVENT_NIUZAO_SHAO_DO_INTRO_ATTACKABLE:
                         {
                             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                            me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                            me->SetHealth(391000/*me->GetMaxHealth()*/);
                             break;
                         }
                         case EVENT_NIUZAO_SHAO_DO_OUTRO:

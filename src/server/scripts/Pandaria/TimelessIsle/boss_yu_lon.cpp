@@ -103,7 +103,7 @@ class boss_yu_lon : public CreatureScript
 
         struct boss_yu_lonAI : public ScriptedAI
         {
-            boss_yu_lonAI(Creature* creature) : ScriptedAI(creature), summons(me) 
+            boss_yu_lonAI(Creature* creature) : ScriptedAI(creature), summons(me)
             {
                 me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE); // prisma
             }
@@ -168,7 +168,7 @@ class boss_yu_lon : public CreatureScript
                     me->RemoveAllAuras();
                     me->GetMotionMaster()->Clear();
                     me->CombatStop(true);
-                    me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                    me->SetHealth(391000/*me->GetMaxHealth()*/);
 
                     me->SetFacingTo(MIDDLE_FACING_ANGLE);
                     me->DeleteThreatList();

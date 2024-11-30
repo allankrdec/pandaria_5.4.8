@@ -83,7 +83,7 @@ class boss_xuen : public CreatureScript
 
         struct boss_xuenAI : public ScriptedAI
         {
-            boss_xuenAI(Creature* creature) : ScriptedAI(creature), summons(me) 
+            boss_xuenAI(Creature* creature) : ScriptedAI(creature), summons(me)
             {
                 me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE); // prisma
             }
@@ -148,7 +148,7 @@ class boss_xuen : public CreatureScript
                     me->RemoveAllAuras();
                     me->GetMotionMaster()->Clear();
                     me->CombatStop(true);
-                    me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                    me->SetHealth(391000/*me->GetMaxHealth()*/);
 
                     me->SetFacingTo(MIDDLE_FACING_ANGLE);
                     me->DeleteThreatList();
@@ -223,7 +223,7 @@ class boss_xuen : public CreatureScript
                         case EVENT_SHAO_DO_INTRO_ATTACKABLE:
                         {
                             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                            me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                            me->SetHealth(391000/*me->GetMaxHealth()*/);
                             break;
                         }
                         case EVENT_SHAO_DO_OUTRO:
@@ -270,7 +270,7 @@ class boss_xuen : public CreatureScript
                         case EVENT_SPECTRAL_SWIPES:
                         {
                             DoCast(SPELL_SPECTRAL_SWIPE);
-                            events.ScheduleEvent(EVENT_SPECTRAL_SWIPES, urand(10000, 15000)); 
+                            events.ScheduleEvent(EVENT_SPECTRAL_SWIPES, urand(10000, 15000));
                             break;
                         }
                         case EVENT_AGILITY_SELF_BUFF:
