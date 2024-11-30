@@ -148,7 +148,7 @@ class boss_xuen : public CreatureScript
                     me->RemoveAllAuras();
                     me->GetMotionMaster()->Clear();
                     me->CombatStop(true);
-                    me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                    me->SetHealth(391000000/*me->GetMaxHealth()*/);
 
                     me->SetFacingTo(MIDDLE_FACING_ANGLE);
                     me->DeleteThreatList();
@@ -223,7 +223,7 @@ class boss_xuen : public CreatureScript
                         case EVENT_SHAO_DO_INTRO_ATTACKABLE:
                         {
                             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                            me->SetHealth(39100000/*me->GetMaxHealth()*/);
+                            me->SetHealth(391000000/*me->GetMaxHealth()*/);
                             break;
                         }
                         case EVENT_SHAO_DO_OUTRO:
