@@ -10,3 +10,5 @@ insert into personal_loot_item (entry, item) values (71954, 104272);
 insert into personal_loot_item (entry, item) values (71953, 104272);
 insert into personal_loot_item (entry, item) values (71955, 104272);
 insert into personal_loot_item (entry, item) values (71952, 104272);
+
+delete from item_loot_template where entry=104272 and item = 104272;
