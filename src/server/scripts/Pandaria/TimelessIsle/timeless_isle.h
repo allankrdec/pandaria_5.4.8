@@ -520,7 +520,7 @@ static void UpdateHealth(Creature* me)
     if (!info)
         return;
 
-    me->RecalculateDynamicHealth(info->Health);
+    //me->RecalculateDynamicHealth(info->Health);
 }
 
 #define MIDDLE_FACING_ANGLE 1.573f
