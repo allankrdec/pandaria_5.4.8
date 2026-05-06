@@ -16,7 +16,7 @@ services:
     ports:
       - "3306:3306"
 
-authserver:
+  authserver:
     image: allankrdec/wow-pandaria-5.4.8
     container_name: wow-pandaria-auth
     depends_on:
@@ -38,7 +38,7 @@ authserver:
     ports:
       - "3724:3724"
 
-worldserver:
+  worldserver:
     image: allankrdec/wow-pandaria-5.4.8
     container_name: wow-pandaria-world
     depends_on:
