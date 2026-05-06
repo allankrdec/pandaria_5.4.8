@@ -3,13 +3,6 @@ version: "3.8"
 name: wow-pandaria-5.4.8
 
 services:
-  wow-build:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-
-    image: wow-pandaria-5.4.8
-
   db:
     image: mysql:5.7
     container_name: wow-pandaria-db
@@ -24,7 +17,7 @@ services:
       - "3306:3306"
 
   authserver:
-    image: wow-pandaria-5.4.8
+    image: allankrdec/wow-pandaria-5.4.8
     container_name: wow-pandaria-auth
     depends_on:
       - db
@@ -46,7 +39,7 @@ services:
       - "3724:3724"
 
   worldserver:
-    image: wow-pandaria-5.4.8
+    image: allankrdec/wow-pandaria-5.4.8
     container_name: wow-pandaria-world
     depends_on:
       - db
