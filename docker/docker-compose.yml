@@ -4,7 +4,10 @@ name: wow-pandaria-5.4.8
 
 services:
   wow-build:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    
     image: wow-pandaria-5.4.8
 
 db:
