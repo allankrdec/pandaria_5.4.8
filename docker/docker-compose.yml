@@ -3,7 +3,72 @@ version: "3.8"
 name: wow-pandaria-5.4.8
 
 services:
-
   wow-build:
     build: .
     image: wow-pandaria-5.4.8
+
+db:
+    image: mysql:5.7
+    container_name: wow-pandaria-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: trinity
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - wow_pandaria_db_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+authserver:
+    image: wow-pandaria-5.4.8
+    container_name: wow-pandaria-auth
+    depends_on:
+      - db
+    restart: always
+    volumes:
+      - ${PWD}/etc:/app/etc
+      - ${PWD}/data:/app/data
+    working_dir: /app
+    command:
+      - sh
+      - -c
+      - |
+        until mysql -h db -u root -ptrinity -e "SELECT 1" >/dev/null 2>&1; do
+          sleep 2
+        done
+        ./bin/authserver
+#    command: ['sleep', 'infinity']
+    ports:
+      - "3724:3724"
+
+worldserver:
+    image: wow-pandaria-5.4.8
+    container_name: wow-pandaria-world
+    depends_on:
+      - db
+      - authserver
+    restart: always
+    volumes:
+      - ${PWD}/etc:/app/etc
+      - ${PWD}/data:/app/data
+    working_dir: /app
+    stdin_open: true
+    tty: true
+#    command: ['sleep', 'infinity']
+    command:
+      - sh
+      - -c
+      - |
+        until mysql -h db -u root -ptrinity -e "SELECT 1" >/dev/null 2>&1; do
+          sleep 2
+        done
+        ./bin/worldserver
+    ports:
+      - "8085:8085"
+
+volumes:
+  db_data:
+  volumes:
+  wow_pandaria_db_data:
+    name: wow-pandaria-db
