@@ -51,15 +51,15 @@ services:
     working_dir: /app
     stdin_open: true
     tty: true
-#    command: ['sleep', 'infinity']
-    command:
-      - sh
-      - -c
-      - |
-        until mysql -h db -u root -ptrinity -e "SELECT 1" >/dev/null 2>&1; do
-          sleep 2
-        done
-        ./bin/worldserver
+    command: ['sleep', 'infinity']
+#    command:
+#      - sh
+#      - -c
+#      - |
+#        until mysql -h db -u root -ptrinity -e "SELECT 1" >/dev/null 2>&1; do
+#          sleep 2
+#        done
+#        ./bin/worldserver
     ports:
       - "8085:8085"
 

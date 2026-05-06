@@ -77,6 +77,6 @@ RUN apt-get update && apt-get install -y \
     netcat \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /home/wow/pandaria-548 /app
+COPY --from=builder /app /app
 
 WORKDIR /app

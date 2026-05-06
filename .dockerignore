@@ -1,4 +1,7 @@
+docker/data
+docker/logs
 build
+sql
 .git
 .idea
 .vscode
