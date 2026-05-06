@@ -10,7 +10,7 @@ services:
     
     image: wow-pandaria-5.4.8
 
-db:
+  db:
     image: mysql:5.7
     container_name: wow-pandaria-db
     restart: always
@@ -23,7 +23,7 @@ db:
     ports:
       - "3306:3306"
 
-authserver:
+  authserver:
     image: wow-pandaria-5.4.8
     container_name: wow-pandaria-auth
     depends_on:
@@ -45,7 +45,7 @@ authserver:
     ports:
       - "3724:3724"
 
-worldserver:
+  worldserver:
     image: wow-pandaria-5.4.8
     container_name: wow-pandaria-world
     depends_on:
