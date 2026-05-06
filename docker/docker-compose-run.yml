@@ -66,3 +66,5 @@ worldserver:
 volumes:
   db_data:
   volumes:
+  wow_pandaria_db_data:
+    name: wow-pandaria-db
