@@ -1,0 +1,9 @@
+version: "3.8"
+
+name: wow-pandaria-5.4.8
+
+services:
+
+  wow-build:
+    build: .
+    image: wow-pandaria-5.4.8
